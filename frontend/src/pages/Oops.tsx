@@ -1,35 +1,32 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, buttonVariants } from '@/components/ui/button';
+import { LoopyMascot } from '@/components/mascot/LoopyMascot';
 import { cn } from '@/lib/utils';
+import { SITE_BROWSER_TAB_SUFFIX } from '@/config/site';
 
 export type OopsLocationState = {
   message?: string;
 };
 
 /**
- * Full-page recovery UI after a render error (navigated here by ErrorBoundary).
+ * Minimal recovery UI: centered Loopy, title, and actions only.
  */
 export function Oops() {
-  const location = useLocation();
-  const state = (location.state ?? undefined) as OopsLocationState | undefined;
-  const message = state?.message;
+  useEffect(() => {
+    document.title = `Oops · ${SITE_BROWSER_TAB_SUFFIX}`;
+  }, []);
 
   return (
-    <div className="mx-auto flex max-w-lg flex-col items-center gap-6 py-4 text-center">
-      <p className="text-sm text-muted-foreground leading-relaxed">
-        An unexpected problem occurred in the UI. Try reloading the page or return to the dashboard.
-        The sidebar still works if you prefer to navigate away.
-      </p>
-      {message ? (
-        <details className="w-full text-left text-xs text-muted-foreground">
-          <summary className="cursor-pointer select-none text-sm font-medium text-foreground">
-            Technical detail
-          </summary>
-          <pre className="mt-2 max-h-40 overflow-auto whitespace-pre-wrap break-words rounded-md border border-border bg-muted/50 p-3">
-            {message}
-          </pre>
-        </details>
-      ) : null}
+    <div className="flex flex-1 flex-col items-center justify-center gap-8 text-center">
+      <LoopyMascot
+        variant="error"
+        maxHeightClass="max-h-52 sm:max-h-64 md:max-h-72"
+        className="opacity-95"
+      />
+      <h1 className="max-w-[20ch] text-balance text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+        Oops, something went wrong
+      </h1>
       <div className="flex flex-wrap justify-center gap-3">
         <Button type="button" onClick={() => window.location.reload()}>
           Reload page
