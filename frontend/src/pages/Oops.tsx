@@ -21,7 +21,7 @@ export function Oops() {
     <div className="flex flex-1 flex-col items-center justify-center gap-8 text-center">
       <LoopyMascot
         variant="error"
-        maxHeightClass="max-h-52 sm:max-h-64 md:max-h-72"
+        maxHeightClass="max-h-40 sm:max-h-48 md:max-h-52"
         className="opacity-95"
       />
       <h1 className="max-w-[20ch] text-balance text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
