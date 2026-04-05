@@ -1,5 +1,11 @@
 # Closed-loop AI scientist — cell culture workcell
 
+<p align="center">
+  <img src="assets/mascot/readme-loopy.png" alt="Loopy, the project mascot, with charts" width="300" />
+</p>
+
+<p align="center"><sub>Meet <strong>Loopy</strong>, the mascot in the React dashboard (assets in <code>assets/mascot/</code>).</sub></p>
+
 **Data parser** — turns per-well OD CSVs + a well-to-design mapping into **`growth_metrics.json`**.  
 **Webapp** — FastAPI serves that data over HTTP; a React UI browses iterations, plates, and charts.
 
