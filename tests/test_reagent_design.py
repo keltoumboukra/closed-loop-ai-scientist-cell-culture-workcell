@@ -11,6 +11,7 @@ from src.design.reagent_iteration import (
     DESIGN_TYPE_LHS,
     DESIGN_TYPE_MEDIA_BLANK,
     MAX_WELL_VOLUME_UL,
+    MIN_TRANSFER_VOLUME_UL,
     PARAM_ORDER,
     StockConfig,
     assign_designs_to_wells,
@@ -66,6 +67,13 @@ def test_transfer_volumes_sum_to_final() -> None:
         total_in = total_in_for_well(well)
         assert total_in <= final + 1e-6, (well, total_in, final)
         assert total_in <= MAX_WELL_VOLUME_UL + 1e-6, (well, total_in)
+
+
+def test_each_transfer_volume_at_least_10_or_skipped() -> None:
+    _mapping, xfer, _s = generate_iter_001_bundle(seed=42)
+    for step in xfer:
+        vol = float(step["volume"])
+        assert vol >= MIN_TRANSFER_VOLUME_UL - 1e-9, step
 
 
 def test_dispensed_volume_never_exceeds_200_ul() -> None:

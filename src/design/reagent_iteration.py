@@ -43,6 +43,9 @@ DESIGN_TYPE_BASE_CONTROL = 2.0
 # Total liquid per experiment well must not exceed this (96-well plate target fill).
 MAX_WELL_VOLUME_UL = 200.0
 
+# Liquid handler: do not schedule transfers below this volume (µL).
+MIN_TRANSFER_VOLUME_UL = 10.0
+
 
 def _base_top_up_ul(stocks_sum: float, inoc_r: float, cap_ul: float) -> float:
     """µL of base so stocks + base + inoculum never exceeds cap_ul (2 decimal µL steps).
@@ -54,6 +57,68 @@ def _base_top_up_ul(stocks_sum: float, inoc_r: float, cap_ul: float) -> float:
     if remainder <= 0:
         return 0.0
     return math.floor(remainder * 100 + 1e-9) / 100
+
+
+def _apply_min_transfer_volumes_for_well(
+    rounded_stock: dict[str, float],
+    inoc_r: float,
+    cap_ul: float,
+    *,
+    min_transfer_ul: float,
+    volume_round_decimals: int,
+    well_label: str,
+) -> tuple[dict[str, float], float, float]:
+    """Enforce min µL per non-zero transfer; keep total dispensed at or below cap_ul.
+
+    Stock and inoculum steps use at least ``min_transfer_ul`` when non-zero.
+    Base top-up uses :func:`_base_top_up_ul`; if it would be in (0, min), it is
+    raised to ``min_transfer_ul`` and stock volumes are trimmed (largest first,
+    never below ``min_transfer_ul`` for a well that still receives that stock).
+    """
+    rd = volume_round_decimals
+    rs = {k: (round(v, rd) if v > 0 else 0.0) for k, v in rounded_stock.items()}
+    for k in rs:
+        if rs[k] > 0:
+            rs[k] = max(rs[k], min_transfer_ul)
+
+    inoc_out = round(inoc_r, rd)
+    if inoc_out > 0:
+        inoc_out = max(inoc_out, min_transfer_ul)
+
+    for _ in range(80):
+        stocks_sum = sum(rs.values())
+        if stocks_sum + inoc_out > cap_ul + 1e-9:
+            raise ValueError(
+                f"{well_label}: stocks+inoc exceed cap after min transfer enforce: "
+                f"stocks_sum={stocks_sum} inoc={inoc_out} cap={cap_ul}"
+            )
+        base_r = _base_top_up_ul(stocks_sum, inoc_out, cap_ul)
+        if base_r < 1e-9:
+            return rs, inoc_out, 0.0
+        if base_r + 1e-9 >= min_transfer_ul:
+            return rs, inoc_out, base_r
+
+        shortfall = min_transfer_ul - base_r
+        to_remove = shortfall
+        for k in sorted(rs, key=lambda x: rs[x], reverse=True):
+            if to_remove <= 1e-9:
+                break
+            if rs[k] <= 0:
+                continue
+            can_remove = rs[k] - min_transfer_ul
+            if can_remove <= 1e-9:
+                continue
+            take = min(to_remove, can_remove)
+            rs[k] = round(rs[k] - take, rd)
+            to_remove -= take
+
+        if to_remove > 1e-9:
+            raise ValueError(
+                f"{well_label}: cannot satisfy {min_transfer_ul} µL minimum transfer "
+                f"and {cap_ul} µL cap (still {to_remove:.2f} µL over budget after trimming)"
+            )
+
+    raise ValueError(f"{well_label}: min-transfer reconcile did not converge")
 
 
 @dataclass(frozen=True)
@@ -214,6 +279,7 @@ def build_transfer_array(
     post_mix_volume: float = 40.0,
     post_mix_reps: int = 5,
     volume_round_decimals: int = 2,
+    min_transfer_volume_ul: float = MIN_TRANSFER_VOLUME_UL,
 ) -> list[dict[str, Any]]:
     """Build Monomer-style transfer_array for all wells."""
     stocks = stocks or StockConfig()
@@ -240,14 +306,15 @@ def build_transfer_array(
             rounded_stock[key] = vol_r if vol_r > 0 else 0.0
 
         inoc_r = round(inoc_ul, volume_round_decimals)
-        stocks_sum = sum(rounded_stock.values())
         cap_ul = min(float(final_ul), MAX_WELL_VOLUME_UL)
-        if stocks_sum + inoc_r > cap_ul + 1e-9:
-            raise ValueError(
-                f"{dst_well}: stocks+inoc exceed cap: stocks={stocks_sum} "
-                f"inoc={inoc_r} cap={cap_ul}"
-            )
-        base_r = _base_top_up_ul(stocks_sum, inoc_r, cap_ul)
+        rounded_stock, inoc_r, base_r = _apply_min_transfer_volumes_for_well(
+            rounded_stock,
+            inoc_r,
+            cap_ul,
+            min_transfer_ul=min_transfer_volume_ul,
+            volume_round_decimals=volume_round_decimals,
+            well_label=dst_well,
+        )
 
         for key in ("nacl", "mops", "glucose", "mgso4", "casamino"):
             vol_r = rounded_stock[key]
@@ -366,6 +433,10 @@ def render_summary_markdown(
                 f"- **Max total volume per well:** {MAX_WELL_VOLUME_UL:.0f} µL. "
                 "Base top-up uses a floored remainder so rounded stock aliquots "
                 "cannot push the sum over this cap."
+            ),
+            (
+                f"- **Minimum transfer volume:** {MIN_TRANSFER_VOLUME_UL:.0f} µL per "
+                "non-zero dispense (reagent, base, or inoculum)."
             ),
             "",
         ]
