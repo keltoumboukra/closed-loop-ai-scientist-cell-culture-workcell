@@ -4,10 +4,13 @@
  */
 export const REPOSITORY_NAME = 'closed-loop-ai-scientist-cell-culture-workcell';
 
-/** Human-readable app title (browser tab, main header, sidebar). */
+/** Legacy full app name (e.g. docs, defaults). Main UI uses page name + mascot in the header. */
 export const SITE_DISPLAY_TITLE = 'Closed Loop AI Scientist Cell Culture Dashboard';
 
-/** Short line under the main title in the primary content area. */
+/** Suffix for document.title: "<Page> · {this}" */
+export const SITE_BROWSER_TAB_SUFFIX = 'Closed-loop cell culture';
+
+/** @deprecated Tagline removed from layout; kept for reference or future use. */
 export const SITE_TAGLINE =
   'Monitor iteration runs, growth metrics, and plate layouts for closed-loop experiments.';
 

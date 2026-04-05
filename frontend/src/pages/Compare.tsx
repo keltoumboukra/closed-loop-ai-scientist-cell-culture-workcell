@@ -66,18 +66,15 @@ export function Compare() {
   if (!summaries?.length) {
     return (
       <EmptyState
-        title="Compare"
         description="No iterations to compare. Generate mock data or run an experiment first."
+        mascot="compare"
       />
     );
   }
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Compare iterations"
-        description="Lay plates side by side so you can compare runs on the same color scale. Choose a metric, pick which iterations to show, then scroll horizontally."
-      />
+      <PageHeader description="Lay plates side by side so you can compare runs on the same color scale. Choose a metric, pick which iterations to show, then scroll horizontally." />
 
       <Card className="max-w-3xl">
         <CardHeader className="space-y-3 border-b border-border/60 pb-4">
