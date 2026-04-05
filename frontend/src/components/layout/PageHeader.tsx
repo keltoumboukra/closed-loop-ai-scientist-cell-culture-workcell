@@ -20,12 +20,12 @@ type Props = {
 export function PageHeader({ title, description, titleAddon, mascot, className }: Props) {
   return (
     <header className={cn('space-y-2', className)}>
-      <div className="flex items-start gap-2.5 sm:gap-3">
+      <div className="flex items-center gap-3 sm:gap-4">
         {mascot ? (
-          <div className="shrink-0 mt-1 select-none pointer-events-none" aria-hidden>
+          <div className="shrink-0 flex select-none pointer-events-none" aria-hidden>
             <LoopyMascot
               variant={mascot}
-              maxHeightClass="max-h-9 sm:max-h-10"
+              maxHeightClass="max-h-16 sm:max-h-20"
               className="opacity-[0.9]"
             />
           </div>
