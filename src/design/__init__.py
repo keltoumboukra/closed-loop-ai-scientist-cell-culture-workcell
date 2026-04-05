@@ -12,14 +12,24 @@ from src.design.reagent_iteration import (
     generate_iter_001_bundle,
     write_iter_001_outputs,
 )
+from src.design.transfer_validation import (
+    MonomerCellCultureTransferRow,
+    MonomerReagentTransferRow,
+    MonomerTransferRow,
+    validate_transfer_array,
+)
 
 __all__ = [
     "MAX_WELL_VOLUME_UL",
     "MIN_TRANSFER_VOLUME_UL",
+    "MonomerCellCultureTransferRow",
+    "MonomerReagentTransferRow",
+    "MonomerTransferRow",
     "StockConfig",
     "build_transfer_array",
     "generate_iter_001_bundle",
     "lhs_sample_matrix_from_mapping",
+    "validate_transfer_array",
     "write_iter_001_outputs",
     "write_lhs_visualization_files",
 ]

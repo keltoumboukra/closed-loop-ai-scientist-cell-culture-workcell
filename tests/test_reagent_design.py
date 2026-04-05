@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 import pytest
+from pydantic import ValidationError
 
 from src.design.lhs_plots import lhs_sample_matrix_from_mapping, write_lhs_visualization_files
 from src.design.reagent_iteration import (
@@ -23,6 +24,7 @@ from src.design.reagent_iteration import (
     stock_volumes_ul,
     write_iter_001_outputs,
 )
+from src.design.transfer_validation import validate_transfer_array
 
 
 def test_latin_hypercube_scaled_in_bounds() -> None:
@@ -170,6 +172,74 @@ def test_write_iter_001_outputs(tmp_path: Path) -> None:
     assert len(data["designs"]) == 96
     assert (iteration_dir / "input" / "transfer_array.json").is_file()
     assert (iteration_dir / "input" / "iter_001_design_summary.md").is_file()
+
+
+def test_validate_transfer_array_accepts_generator_output() -> None:
+    _mapping, xfer, _summary = generate_iter_001_bundle(seed=17)
+    rows = validate_transfer_array(xfer)
+    assert len(rows) == len(xfer)
+
+
+def test_validate_transfer_array_written_json_round_trip(tmp_path: Path) -> None:
+    iteration_dir = tmp_path / "iter_001"
+    write_iter_001_outputs(iteration_dir, seed=18)
+    raw = json.loads((iteration_dir / "input" / "transfer_array.json").read_text())
+    rows = validate_transfer_array(raw)
+    assert len(rows) > 0
+
+
+def test_validate_transfer_array_rejects_volume_below_min() -> None:
+    row = {
+        "src_plate": "reagent",
+        "src_well": "A1",
+        "dst_plate": "experiment",
+        "dst_well": "A1",
+        "volume": 9.99,
+        "new_tip": "once",
+        "blow_out": True,
+    }
+    with pytest.raises(ValueError, match="below minimum"):
+        validate_transfer_array([row])
+
+
+def test_validate_transfer_array_rejects_per_well_over_cap() -> None:
+    rows = [
+        {
+            "src_plate": "reagent",
+            "src_well": "A6",
+            "dst_plate": "experiment",
+            "dst_well": "A1",
+            "volume": 150.0,
+            "new_tip": "once",
+            "blow_out": True,
+        },
+        {
+            "src_plate": "reagent",
+            "src_well": "A6",
+            "dst_plate": "experiment",
+            "dst_well": "A1",
+            "volume": 51.0,
+            "new_tip": "once",
+            "blow_out": True,
+        },
+    ]
+    with pytest.raises(ValueError, match="above cap"):
+        validate_transfer_array(rows)
+
+
+def test_validate_transfer_array_rejects_extra_keys() -> None:
+    row = {
+        "src_plate": "reagent",
+        "src_well": "A1",
+        "dst_plate": "experiment",
+        "dst_well": "A1",
+        "volume": 50.0,
+        "new_tip": "once",
+        "blow_out": True,
+        "unexpected": 1,
+    }
+    with pytest.raises(ValidationError):
+        validate_transfer_array([row])
 
 
 def test_transfer_array_keys_match_monomer_shape() -> None:

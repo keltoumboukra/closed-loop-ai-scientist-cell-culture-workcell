@@ -509,7 +509,11 @@ def write_iter_001_outputs(
     input_dir = iteration_dir / "input"
     input_dir.mkdir(parents=True, exist_ok=True)
     (input_dir / "well_to_design_mapping.json").write_text(json.dumps(mapping, indent=2))
-    (input_dir / "transfer_array.json").write_text(json.dumps(xfer, indent=2))
+    from src.design.transfer_validation import validate_transfer_array
+
+    xfer_validated = validate_transfer_array(xfer)
+    xfer_out = [row.model_dump(mode="json") for row in xfer_validated]
+    (input_dir / "transfer_array.json").write_text(json.dumps(xfer_out, indent=2))
     summary_name = f"{iteration_dir.name}_design_summary.md"
     (input_dir / summary_name).write_text(summary, newline="\n")
     if write_plots:
