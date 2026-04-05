@@ -26,10 +26,10 @@ testpaths = ["tests"]
 # Coverage is always measured for parser + webapp. Do not set cov-fail-under here:
 # running a subset (e.g. tests/test_webapp_api.py) would not execute the parser and would
 # falsely fail. Enforce fail-under in CI and pre-commit via: pytest --cov-fail-under=88
-addopts = "--cov=src/parser --cov=src/webapp --cov-report=term-missing"
+addopts = "--cov=src/parser --cov=src/webapp --cov=src/design --cov-report=term-missing"
 
 [tool.coverage.run]
-source = ["src/parser", "src/webapp"]
+source = ["src/parser", "src/webapp", "src/design"]
 omit = ["src/parser/__main__.py"]
 
 [tool.coverage.report]
