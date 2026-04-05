@@ -3,6 +3,7 @@
 Usage (from repo root, after uv sync):
     uv run python scripts/generate_iter_001_design.py
     uv run python scripts/generate_iter_001_design.py iter_002 --seed 99
+    uv run python scripts/generate_iter_001_design.py --plots
 """
 
 from __future__ import annotations
@@ -50,6 +51,11 @@ def main() -> None:
         default="H12",
         help="Well reserved for base-only control",
     )
+    parser.add_argument(
+        "--plots",
+        action="store_true",
+        help="Write LHS marginal and pairwise PNGs under input/ (requires matplotlib)",
+    )
     args = parser.parse_args()
 
     _ensure_repo_root_on_path()
@@ -69,12 +75,17 @@ def main() -> None:
         seed=args.seed,
         reserved_media_blank=args.media_blank_well,
         reserved_base_control=args.base_control_well,
+        write_plots=args.plots,
     )
     inp = iteration_dir / "input"
     print(f"Wrote {inp / 'well_to_design_mapping.json'}")
     print(f"Wrote {inp / 'transfer_array.json'}")
     summary_name = f"{iteration_dir.name}_design_summary.md"
     print(f"Wrote {inp / summary_name}")
+    if args.plots:
+        stem = iteration_dir.name
+        print(f"Wrote {inp / f'{stem}_lhs_marginals.png'}")
+        print(f"Wrote {inp / f'{stem}_lhs_pairwise.png'}")
 
 
 if __name__ == "__main__":

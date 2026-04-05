@@ -1,7 +1,7 @@
 """Generate iter_001 reagent exploration: LHS designs, mapping JSON, transfer_array, summary.
 
 Design rules (from project plan):
-- 94 Latin Hypercube samples in 5D (media knobs).
+- 94 Latin Hypercube samples in 5D (five medium parameters).
 - 1 media-only blank (base fill, no inoculum transfer).
 - 1 base-only control (no transfers from the five variable stocks; inoculum like LHS).
 """
@@ -383,6 +383,23 @@ def render_summary_markdown(
         "- **94** LHS points in **5** dimensions (one per free well).",
         "- **2** fixed controls: media-only blank and base-only control.",
         f"- RNG seed: **{seed}**.",
+        (
+            "- Optional **LHS figures** (PNG): run the design script with `--plots` to write "
+            "`*_lhs_marginals.png` (1 row x 5 histograms) and `*_lhs_pairwise.png` (5x5 matrix) "
+            "alongside this file."
+        ),
+        "",
+        "### What is a Latin hypercube (LHS)?",
+        "",
+        (
+            "A **Latin hypercube** is a recipe for choosing **N** combinations of **D** numeric "
+            "factors inside fixed min/max bounds. If you project those N points onto any **one** "
+            "factor, the values are **spread out in strata** along that axis (more even coverage "
+            "than drawing N fully random points, which can clump). It is **not** a full factorial "
+            "(which would need every combo of levels and explodes in well count). Here, **D = 5** "
+            "medium parameters and **N = 94** wells, so the first workcell pass samples the "
+            "search box efficiently before Bayesian optimization narrows in."
+        ),
         "",
         "## Parameter bounds (final medium)",
         "",
@@ -480,6 +497,7 @@ def write_iter_001_outputs(
     reserved_media_blank: str = "H11",
     reserved_base_control: str = "H12",
     stocks: StockConfig | None = None,
+    write_plots: bool = False,
 ) -> None:
     """Write input files under iteration_dir/input/."""
     mapping, xfer, summary = generate_iter_001_bundle(
@@ -494,3 +512,7 @@ def write_iter_001_outputs(
     (input_dir / "transfer_array.json").write_text(json.dumps(xfer, indent=2))
     summary_name = f"{iteration_dir.name}_design_summary.md"
     (input_dir / summary_name).write_text(summary, newline="\n")
+    if write_plots:
+        from src.design.lhs_plots import write_lhs_visualization_files
+
+        write_lhs_visualization_files(mapping, input_dir, iteration_dir.name)

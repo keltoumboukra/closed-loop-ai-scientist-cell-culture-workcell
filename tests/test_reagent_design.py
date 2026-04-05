@@ -5,6 +5,9 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pytest
+
+from src.design.lhs_plots import lhs_sample_matrix_from_mapping, write_lhs_visualization_files
 from src.design.reagent_iteration import (
     BOUNDS,
     DESIGN_TYPE_BASE_CONTROL,
@@ -124,6 +127,38 @@ def test_stock_volumes_ul_base_control() -> None:
     assert v_s == {}
     assert inoc == 20.0
     assert base == 180.0
+
+
+def test_lhs_sample_matrix_from_mapping() -> None:
+    mapping, _x, _s = generate_iter_001_bundle(seed=11)
+    m = lhs_sample_matrix_from_mapping(mapping)
+    assert m.shape == (94, 5)
+
+
+def test_lhs_sample_matrix_from_mapping_empty_raises() -> None:
+    bad = {"designs": [{"well": "A1", "params": {"design_type": 1.0}}]}
+    with pytest.raises(ValueError, match="No LHS"):
+        lhs_sample_matrix_from_mapping(bad)
+
+
+def test_write_lhs_visualization_files(tmp_path: Path) -> None:
+    mapping, _x, _s = generate_iter_001_bundle(seed=12)
+    inp = tmp_path / "input"
+    inp.mkdir(parents=True)
+    paths = write_lhs_visualization_files(mapping, inp, "iter_099")
+    assert len(paths) == 2
+    for p in paths:
+        assert p.suffix == ".png"
+        assert p.exists()
+        assert p.stat().st_size > 800
+
+
+def test_write_iter_001_outputs_with_plots(tmp_path: Path) -> None:
+    iteration_dir = tmp_path / "iter_001"
+    write_iter_001_outputs(iteration_dir, seed=13, write_plots=True)
+    marg = iteration_dir / "input" / "iter_001_lhs_marginals.png"
+    pair = iteration_dir / "input" / "iter_001_lhs_pairwise.png"
+    assert marg.is_file() and pair.is_file()
 
 
 def test_write_iter_001_outputs(tmp_path: Path) -> None:

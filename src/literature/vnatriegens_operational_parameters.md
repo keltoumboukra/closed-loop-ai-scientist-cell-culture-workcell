@@ -1,6 +1,6 @@
 # V. natriegens Operational Parameters: Physical & Liquid Handling Variables
 
-Beyond media composition (NaCl, MOPS, glucose, Mg²+, casamino acids), these are the **physical and operational parameters** that significantly affect V. natriegens growth in 96-well plate format. These are the knobs the liquid handler and plate reader can turn.
+Beyond media composition (NaCl, MOPS, glucose, Mg²+, casamino acids), these are the **physical and operational parameters** that significantly affect V. natriegens growth in 96-well plate format. These are the parameters the liquid handler and plate reader can adjust.
 
 ## Executive Summary
 
@@ -238,7 +238,7 @@ V. natriegens' O₂ demand is 5–10x higher than E. coli. In standard microplat
 
 ## Derived / Interaction Parameters
 
-These aren't independent knobs but emerge from combinations:
+These are not set directly on the instrument; they emerge from combinations of the above:
 
 | Derived Parameter | Depends On | Effect |
 |-------------------|-----------|--------|

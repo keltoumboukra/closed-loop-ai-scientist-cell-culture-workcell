@@ -14,6 +14,7 @@ dependencies = [
 [dependency-groups]
 dev = [
     "httpx>=0.28.1",
+    "matplotlib>=3.10.8",
     "mypy>=1.19.1",
     "pre-commit>=4.5.1",
     "pytest>=9.0.2",
@@ -45,7 +46,16 @@ warn_unused_configs = true
 plugins = ["pydantic.mypy"]
 
 [[tool.mypy.overrides]]
-module = ["scipy", "scipy.*", "fastapi", "fastapi.*", "uvicorn", "uvicorn.*"]
+module = [
+    "scipy",
+    "scipy.*",
+    "fastapi",
+    "fastapi.*",
+    "uvicorn",
+    "uvicorn.*",
+    "matplotlib",
+    "matplotlib.*",
+]
 ignore_missing_imports = true
 
 [tool.ruff]
