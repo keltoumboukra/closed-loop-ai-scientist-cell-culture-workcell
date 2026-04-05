@@ -141,7 +141,6 @@ export function Dashboard() {
   if (!summaries || summaries.length === 0) {
     return (
       <EmptyState
-        title="Dashboard"
         description="No iterations found. Run an experiment or generate mock data to get started."
         mascot="dashboard"
       />
@@ -160,11 +159,7 @@ export function Dashboard() {
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Dashboard"
-        description="See how your experiment runs compare across iterations. Pick which runs to include, review the summary cards, then explore Overview and Detailed charts. The legend and filters here stay in sync."
-        mascot="dashboard"
-      />
+      <PageHeader description="See how your experiment runs compare across iterations. Pick which runs to include, review the summary cards, then explore Overview and Detailed charts. The legend and filters here stay in sync." />
 
       <DashboardIterationFilter
         iterationIds={allIds}
