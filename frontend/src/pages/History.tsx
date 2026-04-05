@@ -66,7 +66,11 @@ export function History() {
 
   if (!iterations || iterations.length === 0) {
     return (
-      <EmptyState title="History" description="No iterations found. Generate mock data or run an experiment." />
+      <EmptyState
+        title="History"
+        description="No iterations found. Generate mock data or run an experiment."
+        mascot="history"
+      />
     );
   }
 
@@ -75,6 +79,7 @@ export function History() {
       <PageHeader
         title="History"
         description="Browse every run with a short summary. Sort columns by clicking headers, then open an iteration to see the full plate."
+        mascot="history"
       />
 
       <div className="border rounded-lg">

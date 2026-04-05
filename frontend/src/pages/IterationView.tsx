@@ -89,6 +89,7 @@ export function IterationView() {
         <EmptyState
           title="Iteration"
           description="No data found for this iteration. Check the URL or ensure the parser has run."
+          mascot="iteration"
         />
         {iterationOptions.length > 0 ? (
           <div className="flex max-w-md flex-col gap-2">
@@ -116,6 +117,7 @@ export function IterationView() {
       <PageHeader
         title="Iteration"
         description="Inspect one run's 96-well plate. Choose a metric to color wells, click a well for details, or switch runs from the menu."
+        mascot="iteration"
         titleAddon={
           iterationOptions.length > 0 ? (
             <div className="flex flex-wrap items-center gap-2">

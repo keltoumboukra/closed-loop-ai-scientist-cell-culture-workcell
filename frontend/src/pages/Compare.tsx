@@ -68,6 +68,7 @@ export function Compare() {
       <EmptyState
         title="Compare"
         description="No iterations to compare. Generate mock data or run an experiment first."
+        mascot="compare"
       />
     );
   }
@@ -77,6 +78,7 @@ export function Compare() {
       <PageHeader
         title="Compare iterations"
         description="Lay plates side by side so you can compare runs on the same color scale. Choose a metric, pick which iterations to show, then scroll horizontally."
+        mascot="compare"
       />
 
       <Card className="max-w-3xl">

@@ -2,6 +2,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { GITHUB_REPO_URL } from '@/config/site';
+import { LoopyMascot } from '@/components/mascot/LoopyMascot';
 
 const navClass = ({ isActive }: { isActive: boolean }) =>
   cn(
@@ -20,6 +21,15 @@ export function Sidebar() {
 
   return (
     <aside className="w-56 shrink-0 border-r border-border bg-muted/40 flex flex-col">
+      <div className="flex justify-center border-b border-border px-2 py-3">
+        <Link
+          to="/"
+          className="rounded-md outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          aria-label="Home"
+        >
+          <LoopyMascot variant="head" maxHeightClass="max-h-11" className="opacity-90" />
+        </Link>
+      </div>
       <nav className="flex-1 overflow-y-auto p-2 pt-3 space-y-1">
         <NavLink to="/" end className={navClass}>
           Dashboard
