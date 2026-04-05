@@ -119,7 +119,8 @@ Links each well's parameters to its growth outcome.
 ```
 src/
 ├── literature/       # Srusti
-├── designer/         # Srusti
+├── designer/         # Srusti (planned / BO output)
+├── design/           # Keltoum (reagent LHS, transfer_array, validation)
 ├── mcp/              # Keltoum
 ├── parser/           # Keltoum
 └── webapp/           # Keltoum

@@ -1,9 +1,13 @@
-"""Generate iter_001 reagent exploration: LHS designs, mapping JSON, transfer_array, summary.
+"""Reagent-plate LHS exploration: designs, well mapping JSON, Monomer transfer_array, summary.
 
 Design rules (from project plan):
 - 94 Latin Hypercube samples in 5D (five medium parameters).
 - 1 media-only blank (base fill, no inoculum transfer).
 - 1 base-only control (no transfers from the five variable stocks; inoculum like LHS).
+
+Public entry points for any ``iter_NNN`` folder: :func:`generate_reagent_lhs_bundle`,
+:func:`write_reagent_design_outputs`. Legacy names ``generate_iter_001_bundle`` /
+``write_iter_001_outputs`` remain as aliases.
 """
 
 from __future__ import annotations
@@ -17,6 +21,9 @@ from typing import Any
 
 import numpy as np
 from scipy.stats import qmc
+
+from src.design.constants import MAX_WELL_VOLUME_UL, MIN_TRANSFER_VOLUME_UL
+from src.design.transfer_validation import validate_transfer_array
 
 # Literature bounds: src/literature/vnatriegens_parameter_research.md
 BOUNDS: dict[str, tuple[float, float]] = {
@@ -39,12 +46,6 @@ PARAM_ORDER = (
 DESIGN_TYPE_LHS = 0.0
 DESIGN_TYPE_MEDIA_BLANK = 1.0
 DESIGN_TYPE_BASE_CONTROL = 2.0
-
-# Total liquid per experiment well must not exceed this (96-well plate target fill).
-MAX_WELL_VOLUME_UL = 200.0
-
-# Liquid handler: do not schedule transfers below this volume (µL).
-MIN_TRANSFER_VOLUME_UL = 10.0
 
 
 def _base_top_up_ul(stocks_sum: float, inoc_r: float, cap_ul: float) -> float:
@@ -371,12 +372,13 @@ def render_summary_markdown(
     well_params: dict[str, dict[str, float]],
     stocks: StockConfig,
     *,
+    iteration_id: str,
     reserved_media_blank: str,
     reserved_base_control: str,
     seed: int,
 ) -> str:
     lines = [
-        "# iter_001 design summary",
+        f"# {iteration_id} design summary",
         "",
         "## Latin hypercube",
         "",
@@ -384,9 +386,9 @@ def render_summary_markdown(
         "- **2** fixed controls: media-only blank and base-only control.",
         f"- RNG seed: **{seed}**.",
         (
-            "- Optional **LHS figures** (PNG): run the design script with `--plots` to write "
-            "`*_lhs_marginals.png` (1 row x 5 histograms) and `*_lhs_pairwise.png` (5x5 matrix) "
-            "alongside this file."
+            "- Optional **LHS figures** (PNG): run `scripts/generate_reagent_design.py` "
+            "with `--plots` to write `*_lhs_marginals.png` (1 row x 5 histograms) and "
+            "`*_lhs_pairwise.png` (5x5 matrix) alongside this file."
         ),
         "",
         "### What is a Latin hypercube (LHS)?",
@@ -417,11 +419,11 @@ def render_summary_markdown(
             "",
             (
                 f"- **Media blank** (`design_type={int(DESIGN_TYPE_MEDIA_BLANK)}`): "
-                f"`{reserved_media_blank}` — base fill only, **no** inoculum transfer."
+                f"`{reserved_media_blank}` - base fill only, **no** inoculum transfer."
             ),
             (
                 f"- **Base control** (`design_type={int(DESIGN_TYPE_BASE_CONTROL)}`): "
-                f"`{reserved_base_control}` — **no** transfers from the five variable "
+                f"`{reserved_base_control}` - **no** transfers from the five variable "
                 "stock wells; base + inoculum only."
             ),
             "",
@@ -461,8 +463,9 @@ def render_summary_markdown(
     return "\n".join(lines)
 
 
-def generate_iter_001_bundle(
+def generate_reagent_lhs_bundle(
     *,
+    iteration_id: str = "iter_001",
     seed: int = 42,
     reserved_media_blank: str = "H11",
     reserved_base_control: str = "H12",
@@ -483,6 +486,7 @@ def generate_iter_001_bundle(
     summary = render_summary_markdown(
         well_params,
         stocks,
+        iteration_id=iteration_id,
         reserved_media_blank=reserved_media_blank,
         reserved_base_control=reserved_base_control,
         seed=seed,
@@ -490,7 +494,7 @@ def generate_iter_001_bundle(
     return mapping, xfer, summary
 
 
-def write_iter_001_outputs(
+def write_reagent_design_outputs(
     iteration_dir: Path,
     *,
     seed: int = 42,
@@ -500,7 +504,8 @@ def write_iter_001_outputs(
     write_plots: bool = False,
 ) -> None:
     """Write input files under iteration_dir/input/."""
-    mapping, xfer, summary = generate_iter_001_bundle(
+    mapping, xfer, summary = generate_reagent_lhs_bundle(
+        iteration_id=iteration_dir.name,
         seed=seed,
         reserved_media_blank=reserved_media_blank,
         reserved_base_control=reserved_base_control,
@@ -509,8 +514,6 @@ def write_iter_001_outputs(
     input_dir = iteration_dir / "input"
     input_dir.mkdir(parents=True, exist_ok=True)
     (input_dir / "well_to_design_mapping.json").write_text(json.dumps(mapping, indent=2))
-    from src.design.transfer_validation import validate_transfer_array
-
     xfer_validated = validate_transfer_array(xfer)
     xfer_out = [row.model_dump(mode="json") for row in xfer_validated]
     (input_dir / "transfer_array.json").write_text(json.dumps(xfer_out, indent=2))
@@ -520,3 +523,8 @@ def write_iter_001_outputs(
         from src.design.lhs_plots import write_lhs_visualization_files
 
         write_lhs_visualization_files(mapping, input_dir, iteration_dir.name)
+
+
+# Backward-compatible names (prefer generate_reagent_lhs_bundle / write_reagent_design_outputs).
+generate_iter_001_bundle = generate_reagent_lhs_bundle
+write_iter_001_outputs = write_reagent_design_outputs

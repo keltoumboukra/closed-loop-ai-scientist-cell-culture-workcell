@@ -1,9 +1,10 @@
-"""Write iter_001 input files: well_to_design_mapping.json, transfer_array.json, summary.
+"""CLI: write reagent LHS design files under data/iterations/<iter_NNN>/input/.
 
-Usage (from repo root, after uv sync):
-    uv run python scripts/generate_iter_001_design.py
-    uv run python scripts/generate_iter_001_design.py iter_002 --seed 99
-    uv run python scripts/generate_iter_001_design.py --plots
+Usage (from repo root, after ``uv sync``):
+
+    uv run python scripts/generate_reagent_design.py
+    uv run python scripts/generate_reagent_design.py iter_002 --seed 99
+    uv run python scripts/generate_reagent_design.py --plots
 """
 
 from __future__ import annotations
@@ -15,7 +16,7 @@ from pathlib import Path
 
 
 def _ensure_repo_root_on_path() -> None:
-    """Allow `uv run python scripts/...` to import `src.*` (repo root not on PYTHONPATH)."""
+    """Allow ``uv run python scripts/...`` to import ``src.*`` (repo root not on PYTHONPATH)."""
     root = str(Path(__file__).resolve().parents[1])
     if root not in sys.path:
         sys.path.insert(0, root)
@@ -32,7 +33,7 @@ def _resolve_iteration_dir(arg: str | None) -> Path:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description=("Generate iter_NNN reagent LHS design: mapping, transfer_array, summary."),
+        description="Generate reagent LHS design: mapping, transfer_array, summary (any iter_NNN).",
     )
     parser.add_argument(
         "iteration",
@@ -68,9 +69,9 @@ def main() -> None:
         )
         sys.exit(1)
 
-    from src.design.reagent_iteration import write_iter_001_outputs
+    from src.design.reagent_iteration import write_reagent_design_outputs
 
-    write_iter_001_outputs(
+    write_reagent_design_outputs(
         iteration_dir,
         seed=args.seed,
         reserved_media_blank=args.media_blank_well,

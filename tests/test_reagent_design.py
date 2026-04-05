@@ -1,4 +1,4 @@
-"""Tests for src.design.reagent_iteration (iter_001 LHS + transfer_array)."""
+"""Tests for reagent LHS design, transfer_array, and validation."""
 
 from __future__ import annotations
 
@@ -20,9 +20,11 @@ from src.design.reagent_iteration import (
     StockConfig,
     assign_designs_to_wells,
     generate_iter_001_bundle,
+    generate_reagent_lhs_bundle,
     latin_hypercube_scaled,
     stock_volumes_ul,
     write_iter_001_outputs,
+    write_reagent_design_outputs,
 )
 from src.design.transfer_validation import validate_transfer_array
 
@@ -56,7 +58,7 @@ def test_assign_designs_to_wells_counts_and_controls() -> None:
 
 
 def test_transfer_volumes_sum_to_final() -> None:
-    mapping, xfer, _summary = generate_iter_001_bundle(seed=4)
+    mapping, xfer, _summary = generate_reagent_lhs_bundle(seed=4)
     assert len(mapping["designs"]) == 96
     by_well: dict[str, dict] = {d["well"]: d["params"] for d in mapping["designs"]}
 
@@ -75,14 +77,14 @@ def test_transfer_volumes_sum_to_final() -> None:
 
 
 def test_each_transfer_volume_at_least_10_or_skipped() -> None:
-    _mapping, xfer, _s = generate_iter_001_bundle(seed=42)
+    _mapping, xfer, _s = generate_reagent_lhs_bundle(seed=42)
     for step in xfer:
         vol = float(step["volume"])
         assert vol >= MIN_TRANSFER_VOLUME_UL - 1e-9, step
 
 
 def test_dispensed_volume_never_exceeds_200_ul() -> None:
-    _mapping, xfer, _s = generate_iter_001_bundle(seed=123)
+    _mapping, xfer, _s = generate_reagent_lhs_bundle(seed=123)
     per_well: dict[str, float] = {}
     for step in xfer:
         if step.get("dst_plate") != "experiment":
@@ -95,7 +97,7 @@ def test_dispensed_volume_never_exceeds_200_ul() -> None:
 
 
 def test_media_blank_no_cell_transfer() -> None:
-    _mapping, xfer, _s = generate_iter_001_bundle(seed=5)
+    _mapping, xfer, _s = generate_reagent_lhs_bundle(seed=5)
     cell_to_h11 = [
         x for x in xfer if x.get("dst_well") == "H11" and x.get("src_plate") == "cell_culture_stock"
     ]
@@ -104,7 +106,7 @@ def test_media_blank_no_cell_transfer() -> None:
 
 def test_base_control_no_variable_stocks() -> None:
     stocks = StockConfig()
-    mapping, xfer, _s = generate_iter_001_bundle(seed=6)
+    mapping, xfer, _s = generate_reagent_lhs_bundle(seed=6)
     by_well = {d["well"]: d["params"] for d in mapping["designs"]}
     xfer_h12 = [x for x in xfer if x.get("dst_well") == "H12"]
     for step in xfer_h12:
@@ -132,7 +134,7 @@ def test_stock_volumes_ul_base_control() -> None:
 
 
 def test_lhs_sample_matrix_from_mapping() -> None:
-    mapping, _x, _s = generate_iter_001_bundle(seed=11)
+    mapping, _x, _s = generate_reagent_lhs_bundle(seed=11)
     m = lhs_sample_matrix_from_mapping(mapping)
     assert m.shape == (94, 5)
 
@@ -144,7 +146,7 @@ def test_lhs_sample_matrix_from_mapping_empty_raises() -> None:
 
 
 def test_write_lhs_visualization_files(tmp_path: Path) -> None:
-    mapping, _x, _s = generate_iter_001_bundle(seed=12)
+    mapping, _x, _s = generate_reagent_lhs_bundle(seed=12)
     inp = tmp_path / "input"
     inp.mkdir(parents=True)
     paths = write_lhs_visualization_files(mapping, inp, "iter_099")
@@ -155,17 +157,17 @@ def test_write_lhs_visualization_files(tmp_path: Path) -> None:
         assert p.stat().st_size > 800
 
 
-def test_write_iter_001_outputs_with_plots(tmp_path: Path) -> None:
+def test_write_reagent_design_outputs_with_plots(tmp_path: Path) -> None:
     iteration_dir = tmp_path / "iter_001"
-    write_iter_001_outputs(iteration_dir, seed=13, write_plots=True)
+    write_reagent_design_outputs(iteration_dir, seed=13, write_plots=True)
     marg = iteration_dir / "input" / "iter_001_lhs_marginals.png"
     pair = iteration_dir / "input" / "iter_001_lhs_pairwise.png"
     assert marg.is_file() and pair.is_file()
 
 
-def test_write_iter_001_outputs(tmp_path: Path) -> None:
+def test_write_reagent_design_outputs(tmp_path: Path) -> None:
     iteration_dir = tmp_path / "iter_001"
-    write_iter_001_outputs(iteration_dir, seed=7)
+    write_reagent_design_outputs(iteration_dir, seed=7)
     mapping_path = iteration_dir / "input" / "well_to_design_mapping.json"
     assert mapping_path.is_file()
     data = json.loads(mapping_path.read_text())
@@ -175,14 +177,14 @@ def test_write_iter_001_outputs(tmp_path: Path) -> None:
 
 
 def test_validate_transfer_array_accepts_generator_output() -> None:
-    _mapping, xfer, _summary = generate_iter_001_bundle(seed=17)
+    _mapping, xfer, _summary = generate_reagent_lhs_bundle(seed=17)
     rows = validate_transfer_array(xfer)
     assert len(rows) == len(xfer)
 
 
 def test_validate_transfer_array_written_json_round_trip(tmp_path: Path) -> None:
     iteration_dir = tmp_path / "iter_001"
-    write_iter_001_outputs(iteration_dir, seed=18)
+    write_reagent_design_outputs(iteration_dir, seed=18)
     raw = json.loads((iteration_dir / "input" / "transfer_array.json").read_text())
     rows = validate_transfer_array(raw)
     assert len(rows) > 0
@@ -243,7 +245,7 @@ def test_validate_transfer_array_rejects_extra_keys() -> None:
 
 
 def test_transfer_array_keys_match_monomer_shape() -> None:
-    _m, xfer, _s = generate_iter_001_bundle(seed=8)
+    _m, xfer, _s = generate_reagent_lhs_bundle(seed=8)
     assert len(xfer) > 0
     for step in xfer[:3]:
         assert "src_plate" in step
@@ -257,3 +259,22 @@ def test_transfer_array_keys_match_monomer_shape() -> None:
     assert cell_steps
     assert "post_mix_volume" in cell_steps[0]
     assert "post_mix_reps" in cell_steps[0]
+
+
+def test_legacy_public_names_alias_new_bundle_api() -> None:
+    a, x1, s1 = generate_reagent_lhs_bundle(seed=99)
+    b, x2, s2 = generate_iter_001_bundle(seed=99)
+    assert a == b and x1 == x2 and s1 == s2
+
+
+def test_design_summary_heading_matches_iteration_folder(tmp_path: Path) -> None:
+    iteration_dir = tmp_path / "iter_042"
+    write_reagent_design_outputs(iteration_dir, seed=1)
+    text = (iteration_dir / "input" / "iter_042_design_summary.md").read_text()
+    assert text.startswith("# iter_042 design summary\n")
+
+
+def test_write_iter_001_outputs_alias_writes_files(tmp_path: Path) -> None:
+    iteration_dir = tmp_path / "iter_001"
+    write_iter_001_outputs(iteration_dir, seed=7)
+    assert (iteration_dir / "input" / "transfer_array.json").is_file()

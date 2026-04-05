@@ -7,7 +7,7 @@ from typing import Annotated, Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Discriminator, Field, TypeAdapter
 
-from src.design.reagent_iteration import MAX_WELL_VOLUME_UL, MIN_TRANSFER_VOLUME_UL
+from src.design.constants import MAX_WELL_VOLUME_UL, MIN_TRANSFER_VOLUME_UL
 
 
 class MonomerReagentTransferRow(BaseModel):

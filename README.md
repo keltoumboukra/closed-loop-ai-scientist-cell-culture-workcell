@@ -3,7 +3,7 @@
 **Data parser** — turns per-well OD CSVs + a well-to-design mapping into **`growth_metrics.json`**.  
 **Webapp** — FastAPI serves that data over HTTP; a React UI browses iterations, plates, and charts.
 
-**More detail:** [`src/parser/README.md`](src/parser/README.md) (formats, metrics, layout), [`src/webapp/README.md`](src/webapp/README.md) (API routes, frontend structure).
+**More detail:** [`src/parser/README.md`](src/parser/README.md) (formats, metrics, layout), [`src/webapp/README.md`](src/webapp/README.md) (API routes, frontend structure), [`src/design/README.md`](src/design/README.md) (reagent LHS, `transfer_array`, validation).
 
 ---
 
@@ -27,7 +27,7 @@ uv run uvicorn src.webapp.main:app --reload --port 8000
 cd frontend && npm run dev
 ```
 
-- **Reagent LHS design for Monomer:** run `uv sync` first (Python deps; `matplotlib` is included for `--plots`). Then from the repo root: `uv run python scripts/generate_iter_001_design.py` (the filename is legacy; the CLI is not limited to `iter_001`). **Which iteration** is chosen by the optional first argument: omit it to use `data/iterations/iter_001`, pass `iter_NNN` to use `data/iterations/iter_NNN`, or pass a path to any `iter_*` folder. Under that folder, `input/` gets `well_to_design_mapping.json`, `transfer_array.json` (validated before save), `<folder>_design_summary.md`, and with **`--plots`** the `<folder>_lhs_*.png` figures. **`--seed N`** (default `42`) fixes the Latin hypercube and well shuffle for reproducibility; change `N` for a new layout.
+- **Reagent LHS design for Monomer:** run `uv sync` first (Python deps; `matplotlib` is included for `--plots`). Then: `uv run python scripts/generate_reagent_design.py`. **Which iteration** is chosen by the optional first argument: omit it to use `data/iterations/iter_001`, pass `iter_NNN` to use `data/iterations/iter_NNN`, or pass a path to any `iter_*` folder. Under that folder, `input/` gets `well_to_design_mapping.json`, `transfer_array.json` (validated before save), `<folder>_design_summary.md`, and with **`--plots`** the `<folder>_lhs_*.png` figures. **`--seed N`** (default `42`) fixes the Latin hypercube and well shuffle for reproducibility; change `N` for a new layout. Module layout and imports: [`src/design/README.md`](src/design/README.md).
 
 Open **http://localhost:5173** (UI) and **http://localhost:8000/docs** (API). The next sections spell out the same steps with options and notes.
 
