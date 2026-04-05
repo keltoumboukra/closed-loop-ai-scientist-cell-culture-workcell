@@ -55,8 +55,11 @@ class WellDesign(BaseModel):
 
     well: str = Field(description="Well position on the plate, e.g. 'A3'")
     params: dict[str, float] = Field(
-        description="Design parameters for this well, e.g. "
-        "{'cell_volume_uL': 40, 'mix_height_mm': 1, 'mix_reps': 3}"
+        description=(
+            "Design parameters for this well. Examples: reagent LHS uses keys like "
+            "`nacl_g_per_L`, `mops_mM`, `design_type`, `final_volume_uL`; "
+            "older layouts used `cell_volume_uL`, `mix_height_mm`, `mix_reps`."
+        )
     )
 
 

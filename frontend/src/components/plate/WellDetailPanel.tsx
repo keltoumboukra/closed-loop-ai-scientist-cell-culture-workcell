@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table';
 import { OdCurveChart } from '@/components/charts/OdCurveChart';
 import { useWellTimeseries } from '@/api/client';
+import { designParamEntries } from '@/lib/wellDesign';
 import type { WellResult } from '@/types';
 
 interface Props {
@@ -74,10 +75,10 @@ export function WellDetailPanel({ well, iterationId, onClose }: Props) {
         <CardContent>
           <Table>
             <TableBody>
-              {Object.entries(well.params).map(([key, value]) => (
+              {designParamEntries(well.params).map(({ key, label, display }) => (
                 <TableRow key={key}>
-                  <TableCell className="text-muted-foreground">{key}</TableCell>
-                  <TableCell className="text-right font-mono">{value}</TableCell>
+                  <TableCell className="text-muted-foreground">{label}</TableCell>
+                  <TableCell className="text-right font-mono">{display}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
