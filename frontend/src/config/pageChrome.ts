@@ -1,7 +1,10 @@
-import type { MascotPageVariant } from '@/config/mascot';
+import type { MascotVariant } from '@/config/mascot';
 
 /** Primary heading and mascot for the current route (main column header). */
-export function pageChromeFromPath(pathname: string): { title: string; mascot: MascotPageVariant } {
+export function pageChromeFromPath(pathname: string): { title: string; mascot: MascotVariant } {
+  if (pathname === '/oops') {
+    return { title: 'Something went wrong', mascot: 'error' };
+  }
   if (pathname === '/') {
     return { title: 'Dashboard', mascot: 'dashboard' };
   }
