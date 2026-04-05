@@ -104,6 +104,24 @@ def test_media_blank_no_cell_transfer() -> None:
     assert cell_to_h11 == []
 
 
+def test_transfer_array_blank_well_then_control_then_lhs() -> None:
+    mapping, xfer, _s = generate_reagent_lhs_bundle(seed=9)
+    by_well = {d["well"]: d["params"] for d in mapping["designs"]}
+    blank = next(w for w, p in by_well.items() if p["design_type"] == DESIGN_TYPE_MEDIA_BLANK)
+    ctrl = next(w for w, p in by_well.items() if p["design_type"] == DESIGN_TYPE_BASE_CONTROL)
+    lhs_wells = [w for w, p in by_well.items() if p["design_type"] == DESIGN_TYPE_LHS]
+
+    first_idx: dict[str, int] = {}
+    for i, step in enumerate(xfer):
+        w = str(step["dst_well"])
+        if w not in first_idx:
+            first_idx[w] = i
+
+    assert xfer[0]["dst_well"] == blank
+    assert first_idx[blank] < first_idx[ctrl]
+    assert min(first_idx[w] for w in lhs_wells) > first_idx[ctrl]
+
+
 def test_base_control_no_variable_stocks() -> None:
     stocks = StockConfig()
     mapping, xfer, _s = generate_reagent_lhs_bundle(seed=6)

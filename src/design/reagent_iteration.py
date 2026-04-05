@@ -273,6 +273,29 @@ def stock_volumes_ul(
     return v_stocks, max(base, 0.0), inoc
 
 
+def _transfer_well_order(well_params: dict[str, dict[str, float]]) -> list[str]:
+    """Media blank first, base control second, then remaining wells in plate sort order."""
+    blanks = sorted(
+        (
+            w
+            for w, p in well_params.items()
+            if float(p.get("design_type", -1.0)) == DESIGN_TYPE_MEDIA_BLANK
+        ),
+        key=_well_sort_key,
+    )
+    controls = sorted(
+        (
+            w
+            for w, p in well_params.items()
+            if float(p.get("design_type", -1.0)) == DESIGN_TYPE_BASE_CONTROL
+        ),
+        key=_well_sort_key,
+    )
+    lead = set(blanks) | set(controls)
+    rest = sorted((w for w in well_params if w not in lead), key=_well_sort_key)
+    return [*blanks, *controls, *rest]
+
+
 def build_transfer_array(
     well_params: dict[str, dict[str, float]],
     stocks: StockConfig | None = None,
@@ -282,7 +305,10 @@ def build_transfer_array(
     volume_round_decimals: int = 2,
     min_transfer_volume_ul: float = MIN_TRANSFER_VOLUME_UL,
 ) -> list[dict[str, Any]]:
-    """Build Monomer-style transfer_array for all wells."""
+    """Build Monomer-style transfer_array for all wells.
+
+    Wells run in order: media blank(s), base control(s), then LHS wells in plate order.
+    """
     stocks = stocks or StockConfig()
     transfers: list[dict[str, Any]] = []
 
@@ -294,7 +320,7 @@ def build_transfer_array(
         "casamino": stocks.well_casamino,
     }
 
-    for dst_well in sorted(well_params.keys(), key=_well_sort_key):
+    for dst_well in _transfer_well_order(well_params):
         params = well_params[dst_well]
         final_ul = float(params["final_volume_uL"])
         v_stocks, _base_ul, inoc_ul = stock_volumes_ul(params, final_ul, stocks)
@@ -356,7 +382,7 @@ def build_transfer_array(
                     "volume": inoc_r,
                     "post_mix_volume": post_mix_volume,
                     "post_mix_reps": post_mix_reps,
-                    "new_tip": "always",
+                    "new_tip": "once",
                     "blow_out": False,
                 }
             )
