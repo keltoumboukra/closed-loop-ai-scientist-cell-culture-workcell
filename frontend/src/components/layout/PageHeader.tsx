@@ -20,20 +20,22 @@ type Props = {
 export function PageHeader({ title, description, titleAddon, mascot, className }: Props) {
   return (
     <header className={cn('space-y-2', className)}>
-      <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between sm:gap-4">
-        <div className="min-w-0 flex-1 space-y-2">
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
-            <h2 className="text-xl font-semibold tracking-tight">{title}</h2>
-            {titleAddon}
-          </div>
-          <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">{description}</p>
-        </div>
+      <div className="flex items-start gap-2.5 sm:gap-3">
         {mascot ? (
-          <div className="shrink-0 flex justify-center sm:justify-end sm:pt-0.5">
-            <LoopyMascot variant={mascot} />
+          <div className="shrink-0 mt-1 select-none pointer-events-none" aria-hidden>
+            <LoopyMascot
+              variant={mascot}
+              maxHeightClass="max-h-9 sm:max-h-10"
+              className="opacity-[0.9]"
+            />
           </div>
         ) : null}
+        <div className="min-w-0 flex-1 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
+          <h2 className="text-xl font-semibold tracking-tight">{title}</h2>
+          {titleAddon}
+        </div>
       </div>
+      <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">{description}</p>
     </header>
   );
 }

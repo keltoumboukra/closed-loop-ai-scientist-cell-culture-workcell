@@ -12,7 +12,7 @@ type Props = {
 /**
  * Loopy mascot figure from public static paths.
  */
-export function LoopyMascot({ variant, className, maxHeightClass = 'max-h-28' }: Props) {
+export function LoopyMascot({ variant, className, maxHeightClass = 'max-h-24' }: Props) {
   return (
     <img
       src={mascotSrc(variant)}

@@ -12,17 +12,19 @@ type Props = {
 
 export function EmptyState({ title, description, mascot = 'empty', children }: Props) {
   return (
-    <div className="space-y-4">
+    <div className="max-w-prose space-y-3">
+      <h2 className="text-xl font-semibold">{title}</h2>
       {mascot ? (
-        <div className="flex justify-center sm:justify-start">
-          <LoopyMascot variant={mascot} maxHeightClass="max-h-36" />
+        <div className="py-1 select-none pointer-events-none" aria-hidden>
+          <LoopyMascot
+            variant={mascot}
+            maxHeightClass="max-h-[6.5rem] sm:max-h-28"
+            className="opacity-90"
+          />
         </div>
       ) : null}
-      <div className="space-y-2">
-        <h2 className="text-xl font-semibold">{title}</h2>
-        <p className="text-muted-foreground max-w-prose">{description}</p>
-        {children}
-      </div>
+      <p className="text-muted-foreground">{description}</p>
+      {children}
     </div>
   );
 }
