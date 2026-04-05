@@ -9,6 +9,7 @@ Design rules (from project plan):
 from __future__ import annotations
 
 import json
+import math
 import random
 from dataclasses import dataclass
 from pathlib import Path
@@ -38,6 +39,21 @@ PARAM_ORDER = (
 DESIGN_TYPE_LHS = 0.0
 DESIGN_TYPE_MEDIA_BLANK = 1.0
 DESIGN_TYPE_BASE_CONTROL = 2.0
+
+# Total liquid per experiment well must not exceed this (96-well plate target fill).
+MAX_WELL_VOLUME_UL = 200.0
+
+
+def _base_top_up_ul(stocks_sum: float, inoc_r: float, cap_ul: float) -> float:
+    """µL of base so stocks + base + inoculum never exceeds cap_ul (2 decimal µL steps).
+
+    Uses floor on the remainder so independent rounding of stock aliquots cannot push
+    the sum over ``cap_ul``.
+    """
+    remainder = cap_ul - stocks_sum - inoc_r
+    if remainder <= 0:
+        return 0.0
+    return math.floor(remainder * 100 + 1e-9) / 100
 
 
 @dataclass(frozen=True)
@@ -94,7 +110,7 @@ def assign_designs_to_wells(
     rng.shuffle(free)
 
     out: dict[str, dict[str, float]] = {}
-    final_vol = 200.0
+    final_vol = MAX_WELL_VOLUME_UL
     inoc_lhs = 20.0
     inoc_blank = 0.0
 
@@ -225,12 +241,13 @@ def build_transfer_array(
 
         inoc_r = round(inoc_ul, volume_round_decimals)
         stocks_sum = sum(rounded_stock.values())
-        base_r = round(final_ul - stocks_sum - inoc_r, volume_round_decimals)
-        if base_r < 0:
+        cap_ul = min(float(final_ul), MAX_WELL_VOLUME_UL)
+        if stocks_sum + inoc_r > cap_ul + 1e-9:
             raise ValueError(
-                f"{dst_well}: negative base after rounding "
-                f"(final={final_ul} stocks={stocks_sum} inoc={inoc_r})"
+                f"{dst_well}: stocks+inoc exceed cap: stocks={stocks_sum} "
+                f"inoc={inoc_r} cap={cap_ul}"
             )
+        base_r = _base_top_up_ul(stocks_sum, inoc_r, cap_ul)
 
         for key in ("nacl", "mops", "glucose", "mgso4", "casamino"):
             vol_r = rounded_stock[key]
@@ -345,6 +362,11 @@ def render_summary_markdown(
             "## Experiment plate",
             "",
             "- **Starts empty**; all liquid arrives via `transfer_array`.",
+            (
+                f"- **Max total volume per well:** {MAX_WELL_VOLUME_UL:.0f} µL. "
+                "Base top-up uses a floored remainder so rounded stock aliquots "
+                "cannot push the sum over this cap."
+            ),
             "",
         ]
     )

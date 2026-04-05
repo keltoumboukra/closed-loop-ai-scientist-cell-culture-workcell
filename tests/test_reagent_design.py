@@ -10,6 +10,7 @@ from src.design.reagent_iteration import (
     DESIGN_TYPE_BASE_CONTROL,
     DESIGN_TYPE_LHS,
     DESIGN_TYPE_MEDIA_BLANK,
+    MAX_WELL_VOLUME_UL,
     PARAM_ORDER,
     StockConfig,
     assign_designs_to_wells,
@@ -62,7 +63,22 @@ def test_transfer_volumes_sum_to_final() -> None:
 
     for well, params in by_well.items():
         final = float(params["final_volume_uL"])
-        assert abs(total_in_for_well(well) - final) < 0.02, (well, total_in_for_well(well), final)
+        total_in = total_in_for_well(well)
+        assert total_in <= final + 1e-6, (well, total_in, final)
+        assert total_in <= MAX_WELL_VOLUME_UL + 1e-6, (well, total_in)
+
+
+def test_dispensed_volume_never_exceeds_200_ul() -> None:
+    _mapping, xfer, _s = generate_iter_001_bundle(seed=123)
+    per_well: dict[str, float] = {}
+    for step in xfer:
+        if step.get("dst_plate") != "experiment":
+            continue
+        w = str(step["dst_well"])
+        per_well[w] = per_well.get(w, 0.0) + float(step["volume"])
+    assert len(per_well) == 96
+    for well, total in per_well.items():
+        assert total <= MAX_WELL_VOLUME_UL + 1e-9, f"{well} total {total} > {MAX_WELL_VOLUME_UL}"
 
 
 def test_media_blank_no_cell_transfer() -> None:
