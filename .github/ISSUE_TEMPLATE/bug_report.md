@@ -26,6 +26,3 @@ labels:
 - Browser (dashboard):
 - Commit or version:
 
-<!--
-Fork? Replace the image URL above with your fork's raw file, or remove the image line.
--->
