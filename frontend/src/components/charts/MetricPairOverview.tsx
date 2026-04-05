@@ -74,7 +74,9 @@ export function MetricPairOverview({ iterations, xMetric, yMetric, onIterationLe
           opacity: 0.72,
           line: { width: 0 },
         },
-        hovertemplate: `<b>${id}</b><br>%{text}<br>${METRIC_LABELS[xMetric]}: %{x:.4f}<br>${METRIC_LABELS[yMetric]}: %{y:.4f}<br>%{customdata}<extra></extra>`,
+        hovertemplate:
+          `<b>${id}</b><br>Well %{text}<br>` +
+          `${METRIC_LABELS[xMetric]}: %{x:.4f}<br>${METRIC_LABELS[yMetric]}: %{y:.4f}<br>%{customdata}<extra></extra>`,
       });
     }
 
@@ -149,20 +151,24 @@ export function MetricPairOverview({ iterations, xMetric, yMetric, onIterationLe
         zeroline: false,
         fixedrange: false,
       },
-      margin: { l: 58, r: 12, t: 24, b: 88 },
+      margin: { l: 58, r: 12, t: 52, b: 56 },
       height: 420,
       paper_bgcolor: 'transparent',
       plot_bgcolor: 'transparent',
       font: { size: 11 },
       showlegend: true,
+      // Keep legend inside the figure (paper y >= 0). A bottom legend (y negative) sits in the
+      // margin and is easy to clip when Card uses overflow-hidden or when the hover layer draws.
       legend: {
         orientation: 'h' as const,
-        y: -0.28,
+        y: 1.02,
+        yanchor: 'bottom' as const,
         x: 0,
         xanchor: 'left' as const,
         font: { size: 10 },
       },
       hovermode: 'closest' as const,
+      hoverlabel: { namelength: -1, align: 'left' as const },
     };
 
     const config = { displayModeBar: false, responsive: true };

@@ -396,12 +396,15 @@ data/
         ├── input/
         │   ├── routine_parameters.json
         │   ├── routines_to_run.json
-        │   └── well_to_design_mapping.json
+        │   ├── well_to_design_mapping.json
+        │   └── transfer_array.json   # Monomer dispense list (optional vs routine JSON)
         ├── output/
         │   └── od_readings.csv
         └── analysis/
             └── growth_metrics.json
 ```
+
+Reagent LHS designs (mapping + `transfer_array.json`) are produced by **`src/design`**; run **`scripts/generate_reagent_design.py`** from the repo root. Details: **`src/design/README.md`**.
 
 ---
 

@@ -1,21 +1,48 @@
 /**
- * Human-readable labels for design-parameter keys from well_to_design_mapping / parser output.
- * Unknown keys fall back to a readable transformation of the key name.
+ * Display helpers for `params` on each well (from `well_to_design_mapping` via parser / API).
+ *
+ * Order follows `Object.keys(params)`, which matches key order in the iteration JSON when the
+ * client parses API responses (same as typical `well_to_design_mapping.json` on disk).
  */
-export const DESIGN_PARAM_LABELS: Record<string, string> = {
-  cell_volume_uL: 'Cell volume',
-  mix_height_mm: 'Mix height',
-  mix_reps: 'Mix reps',
-};
 
-function fallbackLabel(key: string): string {
-  return key.replace(/_/g, ' ').replace(/\buL\b/i, 'µL');
+/** Turn a snake_case API key into a short title (no fixed list of experiment keys). */
+function keyToLabel(key: string): string {
+  return key
+    .split('_')
+    .map((seg) => {
+      if (seg === 'mM') return 'mM';
+      if (seg === 'uL' || seg === 'μL') return 'µL';
+      const lower = seg.toLowerCase();
+      if (lower === 'mm') return 'mm';
+      if (lower === 'per') return 'per';
+      if (seg === 'L') return 'L';
+      if (seg === 'g') return 'g';
+      if (seg.length <= 4 && seg === seg.toUpperCase()) return seg;
+      return seg.charAt(0).toUpperCase() + seg.slice(1).toLowerCase();
+    })
+    .join(' ');
+}
+
+function formatDesignType(v: number): string {
+  if (Math.abs(v - 0) < 1e-6) return 'LHS';
+  if (Math.abs(v - 1) < 1e-6) return 'Media blank';
+  if (Math.abs(v - 2) < 1e-6) return 'Base control';
+  return String(v);
 }
 
 function formatParamValue(key: string, v: number): string {
   if (!Number.isFinite(v)) return String(v);
-  const rounded = Math.abs(v - Math.round(v)) < 1e-6 ? String(Math.round(v)) : v.toFixed(1);
+  if (key === 'design_type') return formatDesignType(v);
+
+  const decimals =
+    key.includes('_g_per_L') || key.includes('_mM') || key.includes('_mm') ? 2 : 1;
+  const roundedRaw = (x: number, d: number) =>
+    Math.abs(x - Math.round(x)) < 1e-6 ? String(Math.round(x)) : x.toFixed(d);
+  const rounded = roundedRaw(v, decimals);
+
   if (key.includes('uL') || key.endsWith('_uL')) return `${rounded} µL`;
+  if (key.endsWith('_g_per_L')) return `${rounded} g/L`;
+  if (key.endsWith('_mM')) return `${rounded} mM`;
   if (key.includes('mm')) return `${rounded} mm`;
   if (key.includes('reps')) return `${rounded} reps`;
   return rounded;
@@ -27,35 +54,33 @@ export type DesignParamEntry = {
   display: string;
 };
 
-/** Ordered entries for display (stable ordering for known keys). */
+/** One row per key, in the same order as in the iteration `params` object. */
 export function designParamEntries(params: Record<string, number> | null | undefined): DesignParamEntry[] {
   if (!params || Object.keys(params).length === 0) return [];
-  const order = ['cell_volume_uL', 'mix_height_mm', 'mix_reps'];
-  const keys = Object.keys(params);
-  const sorted = [
-    ...order.filter((k) => keys.includes(k)),
-    ...keys.filter((k) => !order.includes(k)).sort(),
-  ];
-  return sorted.map((key) => ({
+  return Object.keys(params).map((key) => ({
     key,
-    label: DESIGN_PARAM_LABELS[key] ?? fallbackLabel(key),
+    label: keyToLabel(key),
     display: formatParamValue(key, params[key]!),
   }));
 }
 
-/** One line for summaries and inline text (e.g. "32.6 µL · 1.7 mm · 4 reps"). */
+/** One line for summaries and inline text (e.g. "Cell volume: 32.6 µL · …"). */
 export function formatDesignParamsInline(params: Record<string, number> | null | undefined): string {
   const entries = designParamEntries(params);
   if (entries.length === 0) return '';
   return entries.map((e) => `${e.label}: ${e.display}`).join(' · ');
 }
 
-/** Plotly hover HTML (uses <br>). */
+/**
+ * Text for Plotly `customdata` / hover. Uses simple `<br>` lines only; nested `<b>` can confuse
+ * some Plotly versions, and any `%` must be doubled so hovertemplate does not treat it as syntax.
+ */
 export function formatDesignParamsPlotlyHtml(params: Record<string, number> | null | undefined): string {
   const entries = designParamEntries(params);
-  if (entries.length === 0) return '<b>Experimental design</b><br><i>No parameters</i>';
-  return (
-    '<b>Experimental design</b><br>' +
-    entries.map((e) => `<b>${e.label}</b><br>${e.display}`).join('<br><br>')
-  );
+  const body =
+    entries.length === 0
+      ? '<i>No parameters</i>'
+      : entries.map((e) => `${e.label}: ${e.display}`).join('<br>');
+  const html = `<b>Experimental design</b><br>${body}`;
+  return html.replace(/%/g, '%%');
 }

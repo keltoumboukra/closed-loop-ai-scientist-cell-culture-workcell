@@ -176,7 +176,7 @@ export function MetricViolinDistribution({ metric, iterations, onIterationLegend
         range: yRange,
         fixedrange: false,
       },
-      margin: { l: 58, r: 12, t: 58, b: 80 },
+      margin: { l: 58, r: 12, t: 72, b: 64 },
       height: 300,
       paper_bgcolor: 'transparent',
       plot_bgcolor: 'transparent',
@@ -184,12 +184,14 @@ export function MetricViolinDistribution({ metric, iterations, onIterationLegend
       showlegend: true,
       legend: {
         orientation: 'h' as const,
-        y: -0.28,
+        y: 1.02,
+        yanchor: 'bottom' as const,
         x: 0,
         xanchor: 'left' as const,
         font: { size: 11 },
       },
       hovermode: 'closest' as const,
+      hoverlabel: { namelength: -1, align: 'left' as const },
     };
 
     const config = { displayModeBar: false, responsive: true };

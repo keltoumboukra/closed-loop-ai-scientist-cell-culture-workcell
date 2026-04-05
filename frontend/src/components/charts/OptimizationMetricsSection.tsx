@@ -12,7 +12,7 @@ type Props = {
 /** Distributions per iteration (violins) for each metric. */
 export function OptimizationMetricsSection({ iterations, onIterationLegendClick }: Props) {
   return (
-    <Card>
+    <Card className="overflow-visible">
       <CardHeader>
         <CardTitle className="text-sm">Detailed view: distribution per iteration</CardTitle>
         <p className="text-xs text-muted-foreground font-normal leading-relaxed">

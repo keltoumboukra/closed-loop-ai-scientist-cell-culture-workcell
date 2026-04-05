@@ -14,6 +14,7 @@ dependencies = [
 [dependency-groups]
 dev = [
     "httpx>=0.28.1",
+    "matplotlib>=3.10.8",
     "mypy>=1.19.1",
     "pre-commit>=4.5.1",
     "pytest>=9.0.2",
@@ -26,10 +27,10 @@ testpaths = ["tests"]
 # Coverage is always measured for parser + webapp. Do not set cov-fail-under here:
 # running a subset (e.g. tests/test_webapp_api.py) would not execute the parser and would
 # falsely fail. Enforce fail-under in CI and pre-commit via: pytest --cov-fail-under=88
-addopts = "--cov=src/parser --cov=src/webapp --cov-report=term-missing"
+addopts = "--cov=src/parser --cov=src/webapp --cov=src/design --cov-report=term-missing"
 
 [tool.coverage.run]
-source = ["src/parser", "src/webapp"]
+source = ["src/parser", "src/webapp", "src/design"]
 omit = ["src/parser/__main__.py"]
 
 [tool.coverage.report]
@@ -45,7 +46,16 @@ warn_unused_configs = true
 plugins = ["pydantic.mypy"]
 
 [[tool.mypy.overrides]]
-module = ["scipy", "scipy.*", "fastapi", "fastapi.*", "uvicorn", "uvicorn.*"]
+module = [
+    "scipy",
+    "scipy.*",
+    "fastapi",
+    "fastapi.*",
+    "uvicorn",
+    "uvicorn.*",
+    "matplotlib",
+    "matplotlib.*",
+]
 ignore_missing_imports = true
 
 [tool.ruff]
