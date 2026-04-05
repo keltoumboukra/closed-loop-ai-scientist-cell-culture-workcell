@@ -241,3 +241,4 @@ datasets/
 
 # Generated mock/experiment data (use scripts/generate_mock_data.py to recreate)
 data/iterations/
+autoresearch-results.tsv
