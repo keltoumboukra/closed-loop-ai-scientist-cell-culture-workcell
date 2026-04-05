@@ -45,7 +45,7 @@ export function OverviewMetricsSection({ iterations, onIterationLegendClick }: P
   };
 
   return (
-    <Card>
+    <Card className="overflow-visible">
       <CardHeader>
         <CardTitle className="text-sm">Overview: metric pair</CardTitle>
         <p className="text-xs text-muted-foreground font-normal leading-relaxed">

@@ -71,12 +71,16 @@ export function formatDesignParamsInline(params: Record<string, number> | null |
   return entries.map((e) => `${e.label}: ${e.display}`).join(' · ');
 }
 
-/** Plotly hover HTML (uses <br>). */
+/**
+ * Text for Plotly `customdata` / hover. Uses simple `<br>` lines only; nested `<b>` can confuse
+ * some Plotly versions, and any `%` must be doubled so hovertemplate does not treat it as syntax.
+ */
 export function formatDesignParamsPlotlyHtml(params: Record<string, number> | null | undefined): string {
   const entries = designParamEntries(params);
-  if (entries.length === 0) return '<b>Experimental design</b><br><i>No parameters</i>';
-  return (
-    '<b>Experimental design</b><br>' +
-    entries.map((e) => `<b>${e.label}</b><br>${e.display}`).join('<br><br>')
-  );
+  const body =
+    entries.length === 0
+      ? '<i>No parameters</i>'
+      : entries.map((e) => `${e.label}: ${e.display}`).join('<br>');
+  const html = `<b>Experimental design</b><br>${body}`;
+  return html.replace(/%/g, '%%');
 }
