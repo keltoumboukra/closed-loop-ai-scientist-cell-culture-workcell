@@ -1,0 +1,1445 @@
+{
+  "iteration_id": "iter_002",
+  "results": [
+    {
+      "well": "A10",
+      "parent_well": "A1",
+      "params": {
+        "cell_volume_uL": 67.6,
+        "mix_height_mm": 3.7,
+        "mix_reps": 4.6
+      },
+      "growth_rate": 0.02764426157337926,
+      "doubling_time_hours": 25.073817895987094,
+      "r_squared": 0.769435663499703,
+      "max_od": 0.1933,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A11",
+      "parent_well": "A1",
+      "params": {
+        "cell_volume_uL": 30.3,
+        "mix_height_mm": 2.3,
+        "mix_reps": 3.7
+      },
+      "growth_rate": 0.09388102412498281,
+      "doubling_time_hours": 7.383251163058956,
+      "r_squared": 0.9601072075353677,
+      "max_od": 0.2256,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A12",
+      "parent_well": "A1",
+      "params": {
+        "cell_volume_uL": 72.1,
+        "mix_height_mm": 1.2,
+        "mix_reps": 3.6
+      },
+      "growth_rate": 0.029749695801661494,
+      "doubling_time_hours": 23.29930313173937,
+      "r_squared": 0.9183743807954625,
+      "max_od": 0.2726,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A1",
+      "parent_well": "stock",
+      "params": {
+        "cell_volume_uL": 54.2,
+        "mix_height_mm": 1.4,
+        "mix_reps": 3.8
+      },
+      "growth_rate": 0.04378181998003881,
+      "doubling_time_hours": 15.831849404066983,
+      "r_squared": 0.9242343399504706,
+      "max_od": 0.2973,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A2",
+      "parent_well": "A1",
+      "params": {
+        "cell_volume_uL": 72.5,
+        "mix_height_mm": 1.7,
+        "mix_reps": 3.5
+      },
+      "growth_rate": 0.08358943975622544,
+      "doubling_time_hours": 8.292281687512114,
+      "r_squared": 0.9729595685075882,
+      "max_od": 0.2056,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A3",
+      "parent_well": "A1",
+      "params": {
+        "cell_volume_uL": 28.3,
+        "mix_height_mm": 2.8,
+        "mix_reps": 2.1
+      },
+      "growth_rate": 0.12384709314190519,
+      "doubling_time_hours": 5.5967981401527975,
+      "r_squared": 0.9683643640340195,
+      "max_od": 0.2972,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A4",
+      "parent_well": "A1",
+      "params": {
+        "cell_volume_uL": 41.0,
+        "mix_height_mm": 3.7,
+        "mix_reps": 1.4
+      },
+      "growth_rate": 0.09342566467567273,
+      "doubling_time_hours": 7.419237347319992,
+      "r_squared": 0.9945215409080699,
+      "max_od": 0.2637,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A5",
+      "parent_well": "A1",
+      "params": {
+        "cell_volume_uL": 71.2,
+        "mix_height_mm": 3.3,
+        "mix_reps": 1.7
+      },
+      "growth_rate": 0.11581773998431183,
+      "doubling_time_hours": 5.984810104685483,
+      "r_squared": 0.9986540977820073,
+      "max_od": 0.4522,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A6",
+      "parent_well": "A1",
+      "params": {
+        "cell_volume_uL": 46.5,
+        "mix_height_mm": 2.3,
+        "mix_reps": 1.4
+      },
+      "growth_rate": 0.09629415087710275,
+      "doubling_time_hours": 7.198227246892572,
+      "r_squared": 0.9930240946833035,
+      "max_od": 0.4805,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A7",
+      "parent_well": "A1",
+      "params": {
+        "cell_volume_uL": 40.0,
+        "mix_height_mm": 1.4,
+        "mix_reps": 1.6
+      },
+      "growth_rate": 0.04729089382094663,
+      "doubling_time_hours": 14.657096209353702,
+      "r_squared": 0.9382874877262077,
+      "max_od": 0.1628,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A8",
+      "parent_well": "A1",
+      "params": {
+        "cell_volume_uL": 49.6,
+        "mix_height_mm": 2.2,
+        "mix_reps": 1.6
+      },
+      "growth_rate": 0.11973084205044011,
+      "doubling_time_hours": 5.7892116073813025,
+      "r_squared": 0.9991378534121337,
+      "max_od": 0.5487,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A9",
+      "parent_well": "A1",
+      "params": {
+        "cell_volume_uL": 67.3,
+        "mix_height_mm": 2.8,
+        "mix_reps": 4.7
+      },
+      "growth_rate": 0.027311568608459815,
+      "doubling_time_hours": 25.379251938874045,
+      "r_squared": 0.8166519026206802,
+      "max_od": 0.2137,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B10",
+      "parent_well": "B1",
+      "params": {
+        "cell_volume_uL": 23.1,
+        "mix_height_mm": 1.5,
+        "mix_reps": 3.5
+      },
+      "growth_rate": 0.06824929725419575,
+      "doubling_time_hours": 10.156107219365293,
+      "r_squared": 0.985318121118909,
+      "max_od": 0.208,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B11",
+      "parent_well": "B1",
+      "params": {
+        "cell_volume_uL": 30.8,
+        "mix_height_mm": 1.5,
+        "mix_reps": 4.8
+      },
+      "growth_rate": 0.10383665806588464,
+      "doubling_time_hours": 6.6753610282809905,
+      "r_squared": 0.9948693443281781,
+      "max_od": 0.408,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B12",
+      "parent_well": "B1",
+      "params": {
+        "cell_volume_uL": 56.8,
+        "mix_height_mm": 2.5,
+        "mix_reps": 2.4
+      },
+      "growth_rate": 0.10786263888710795,
+      "doubling_time_hours": 6.4262026936445755,
+      "r_squared": 0.992646337350487,
+      "max_od": 0.347,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B1",
+      "parent_well": "stock",
+      "params": {
+        "cell_volume_uL": 30.1,
+        "mix_height_mm": 1.9,
+        "mix_reps": 2.5
+      },
+      "growth_rate": 0.052964171860110966,
+      "doubling_time_hours": 13.087095600978836,
+      "r_squared": 0.9683209456094222,
+      "max_od": 0.1701,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B2",
+      "parent_well": "B1",
+      "params": {
+        "cell_volume_uL": 60.2,
+        "mix_height_mm": 2.9,
+        "mix_reps": 2.5
+      },
+      "growth_rate": 0.13981241021077176,
+      "doubling_time_hours": 4.957694238408474,
+      "r_squared": 0.9971090127371219,
+      "max_od": 0.5969,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B3",
+      "parent_well": "B1",
+      "params": {
+        "cell_volume_uL": 23.2,
+        "mix_height_mm": 2.5,
+        "mix_reps": 1.4
+      },
+      "growth_rate": 0.09956033688699101,
+      "doubling_time_hours": 6.962081509896086,
+      "r_squared": 0.9958011461186645,
+      "max_od": 0.4053,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B4",
+      "parent_well": "B1",
+      "params": {
+        "cell_volume_uL": 46.4,
+        "mix_height_mm": 1.6,
+        "mix_reps": 1.8
+      },
+      "growth_rate": 0.0799171347432872,
+      "doubling_time_hours": 8.673323721958983,
+      "r_squared": 0.9800197610751619,
+      "max_od": 0.3083,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B5",
+      "parent_well": "B1",
+      "params": {
+        "cell_volume_uL": 32.0,
+        "mix_height_mm": 2.4,
+        "mix_reps": 1.1
+      },
+      "growth_rate": 0.1195701775986684,
+      "doubling_time_hours": 5.796990474384513,
+      "r_squared": 0.9932695960728977,
+      "max_od": 0.427,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B6",
+      "parent_well": "B1",
+      "params": {
+        "cell_volume_uL": 74.7,
+        "mix_height_mm": 3.3,
+        "mix_reps": 2.6
+      },
+      "growth_rate": 0.1294964439471532,
+      "doubling_time_hours": 5.3526348634161325,
+      "r_squared": 0.9932257652022268,
+      "max_od": 0.3474,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B7",
+      "parent_well": "B1",
+      "params": {
+        "cell_volume_uL": 50.9,
+        "mix_height_mm": 1.2,
+        "mix_reps": 1.0
+      },
+      "growth_rate": 0.1174389593779649,
+      "doubling_time_hours": 5.9021910976673775,
+      "r_squared": 0.998980653623804,
+      "max_od": 0.3268,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B8",
+      "parent_well": "B1",
+      "params": {
+        "cell_volume_uL": 59.6,
+        "mix_height_mm": 1.1,
+        "mix_reps": 4.7
+      },
+      "growth_rate": 0.1405347151899321,
+      "doubling_time_hours": 4.932213223068476,
+      "r_squared": 0.978130974913192,
+      "max_od": 0.323,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B9",
+      "parent_well": "B1",
+      "params": {
+        "cell_volume_uL": 66.2,
+        "mix_height_mm": 4.0,
+        "mix_reps": 2.5
+      },
+      "growth_rate": 0.1396425568559331,
+      "doubling_time_hours": 4.963724498936622,
+      "r_squared": 0.9955825450563182,
+      "max_od": 0.7285,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C10",
+      "parent_well": "C1",
+      "params": {
+        "cell_volume_uL": 47.0,
+        "mix_height_mm": 2.9,
+        "mix_reps": 3.8
+      },
+      "growth_rate": 0.06108730263978266,
+      "doubling_time_hours": 11.346829056232353,
+      "r_squared": 0.9780705537026033,
+      "max_od": 0.3006,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C11",
+      "parent_well": "C1",
+      "params": {
+        "cell_volume_uL": 78.0,
+        "mix_height_mm": 1.9,
+        "mix_reps": 2.1
+      },
+      "growth_rate": 0.04770226537971725,
+      "doubling_time_hours": 14.530697337797038,
+      "r_squared": 0.925003483094662,
+      "max_od": 0.2598,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C12",
+      "parent_well": "C1",
+      "params": {
+        "cell_volume_uL": 57.5,
+        "mix_height_mm": 2.4,
+        "mix_reps": 3.1
+      },
+      "growth_rate": 0.10141012009053012,
+      "doubling_time_hours": 6.835088844596219,
+      "r_squared": 0.99240809471972,
+      "max_od": 0.312,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C1",
+      "parent_well": "stock",
+      "params": {
+        "cell_volume_uL": 63.5,
+        "mix_height_mm": 1.6,
+        "mix_reps": 4.5
+      },
+      "growth_rate": 0.10976702229408336,
+      "doubling_time_hours": 6.314712434331082,
+      "r_squared": 0.997155772962418,
+      "max_od": 0.2918,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C2",
+      "parent_well": "C1",
+      "params": {
+        "cell_volume_uL": 78.8,
+        "mix_height_mm": 2.2,
+        "mix_reps": 1.7
+      },
+      "growth_rate": 0.11809910576152305,
+      "doubling_time_hours": 5.869199229667446,
+      "r_squared": 0.99681550072582,
+      "max_od": 0.4614,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C3",
+      "parent_well": "C1",
+      "params": {
+        "cell_volume_uL": 72.4,
+        "mix_height_mm": 2.6,
+        "mix_reps": 1.9
+      },
+      "growth_rate": 0.048358349377800584,
+      "doubling_time_hours": 14.333557482384663,
+      "r_squared": 0.9567272795259777,
+      "max_od": 0.1698,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C4",
+      "parent_well": "C1",
+      "params": {
+        "cell_volume_uL": 27.6,
+        "mix_height_mm": 1.5,
+        "mix_reps": 2.8
+      },
+      "growth_rate": 0.09183181726062627,
+      "doubling_time_hours": 7.548006793688254,
+      "r_squared": 0.9926038332605119,
+      "max_od": 0.3746,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C5",
+      "parent_well": "C1",
+      "params": {
+        "cell_volume_uL": 69.2,
+        "mix_height_mm": 2.9,
+        "mix_reps": 1.9
+      },
+      "growth_rate": 0.044433621263002876,
+      "doubling_time_hours": 15.599610404409825,
+      "r_squared": 0.8725576760277639,
+      "max_od": 0.132,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C6",
+      "parent_well": "C1",
+      "params": {
+        "cell_volume_uL": 79.6,
+        "mix_height_mm": 3.5,
+        "mix_reps": 3.4
+      },
+      "growth_rate": 0.02033759614803514,
+      "doubling_time_hours": 34.082060412381225,
+      "r_squared": 0.5110849235460314,
+      "max_od": 0.1503,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C7",
+      "parent_well": "C1",
+      "params": {
+        "cell_volume_uL": 43.2,
+        "mix_height_mm": 3.6,
+        "mix_reps": 1.4
+      },
+      "growth_rate": 0.10769652587388755,
+      "doubling_time_hours": 6.436114581556878,
+      "r_squared": 0.9949324636761107,
+      "max_od": 0.3391,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C8",
+      "parent_well": "C1",
+      "params": {
+        "cell_volume_uL": 68.7,
+        "mix_height_mm": 2.7,
+        "mix_reps": 2.9
+      },
+      "growth_rate": 0.02863208180769627,
+      "doubling_time_hours": 24.20875943339992,
+      "r_squared": 0.9798143313558589,
+      "max_od": 0.212,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C9",
+      "parent_well": "C1",
+      "params": {
+        "cell_volume_uL": 56.8,
+        "mix_height_mm": 1.5,
+        "mix_reps": 2.7
+      },
+      "growth_rate": 0.04217557210957267,
+      "doubling_time_hours": 16.43480208778532,
+      "r_squared": 0.8674145982733856,
+      "max_od": 0.164,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D10",
+      "parent_well": "D1",
+      "params": {
+        "cell_volume_uL": 79.7,
+        "mix_height_mm": 1.3,
+        "mix_reps": 4.7
+      },
+      "growth_rate": 0.1112593410757348,
+      "doubling_time_hours": 6.230013353109079,
+      "r_squared": 0.9972302847506288,
+      "max_od": 0.4972,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D11",
+      "parent_well": "D1",
+      "params": {
+        "cell_volume_uL": 62.5,
+        "mix_height_mm": 2.8,
+        "mix_reps": 1.9
+      },
+      "growth_rate": 0.0995612519901404,
+      "doubling_time_hours": 6.962017518909746,
+      "r_squared": 0.961110128741465,
+      "max_od": 0.2446,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D12",
+      "parent_well": "D1",
+      "params": {
+        "cell_volume_uL": 63.2,
+        "mix_height_mm": 1.4,
+        "mix_reps": 4.9
+      },
+      "growth_rate": 0.10809421977561241,
+      "doubling_time_hours": 6.412435206977913,
+      "r_squared": 0.9811055576250031,
+      "max_od": 0.2695,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D1",
+      "parent_well": "stock",
+      "params": {
+        "cell_volume_uL": 64.8,
+        "mix_height_mm": 3.4,
+        "mix_reps": 2.4
+      },
+      "growth_rate": 0.06165695237218413,
+      "doubling_time_hours": 11.24199549104946,
+      "r_squared": 0.9901653357622053,
+      "max_od": 0.3041,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D2",
+      "parent_well": "D1",
+      "params": {
+        "cell_volume_uL": 59.2,
+        "mix_height_mm": 2.3,
+        "mix_reps": 5.0
+      },
+      "growth_rate": 0.11131845949818897,
+      "doubling_time_hours": 6.226704750358336,
+      "r_squared": 0.9981495288040579,
+      "max_od": 0.4208,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D3",
+      "parent_well": "D1",
+      "params": {
+        "cell_volume_uL": 39.7,
+        "mix_height_mm": 2.7,
+        "mix_reps": 1.1
+      },
+      "growth_rate": 0.09556294848942176,
+      "doubling_time_hours": 7.253304670027761,
+      "r_squared": 0.9859813125043848,
+      "max_od": 0.3876,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D4",
+      "parent_well": "D1",
+      "params": {
+        "cell_volume_uL": 20.7,
+        "mix_height_mm": 2.8,
+        "mix_reps": 2.2
+      },
+      "growth_rate": 0.14427784778191927,
+      "doubling_time_hours": 4.804252289704655,
+      "r_squared": 0.9959873078286976,
+      "max_od": 0.6128,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D5",
+      "parent_well": "D1",
+      "params": {
+        "cell_volume_uL": 53.3,
+        "mix_height_mm": 3.3,
+        "mix_reps": 2.9
+      },
+      "growth_rate": 0.14619915076607515,
+      "doubling_time_hours": 4.741116326106505,
+      "r_squared": 0.9994531505655218,
+      "max_od": 0.6165,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D6",
+      "parent_well": "D1",
+      "params": {
+        "cell_volume_uL": 65.6,
+        "mix_height_mm": 1.2,
+        "mix_reps": 4.9
+      },
+      "growth_rate": 0.04637164082621247,
+      "doubling_time_hours": 14.94765266464607,
+      "r_squared": 0.9656916020348264,
+      "max_od": 0.2791,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D7",
+      "parent_well": "D1",
+      "params": {
+        "cell_volume_uL": 38.7,
+        "mix_height_mm": 2.9,
+        "mix_reps": 4.4
+      },
+      "growth_rate": 0.128058757613136,
+      "doubling_time_hours": 5.412727668762294,
+      "r_squared": 0.995226268378482,
+      "max_od": 0.5638,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D8",
+      "parent_well": "D1",
+      "params": {
+        "cell_volume_uL": 51.2,
+        "mix_height_mm": 4.0,
+        "mix_reps": 5.0
+      },
+      "growth_rate": 0.08987595839750727,
+      "doubling_time_hours": 7.712264691456908,
+      "r_squared": 0.9900013446388123,
+      "max_od": 0.4061,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D9",
+      "parent_well": "D1",
+      "params": {
+        "cell_volume_uL": 63.2,
+        "mix_height_mm": 2.8,
+        "mix_reps": 3.6
+      },
+      "growth_rate": 0.08772766062947816,
+      "doubling_time_hours": 7.901124634879807,
+      "r_squared": 0.9832607705601408,
+      "max_od": 0.3218,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E10",
+      "parent_well": "E1",
+      "params": {
+        "cell_volume_uL": 33.3,
+        "mix_height_mm": 2.8,
+        "mix_reps": 3.4
+      },
+      "growth_rate": 0.0929864802247875,
+      "doubling_time_hours": 7.454279147724663,
+      "r_squared": 0.9928706540809179,
+      "max_od": 0.3813,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E11",
+      "parent_well": "E1",
+      "params": {
+        "cell_volume_uL": 28.4,
+        "mix_height_mm": 1.0,
+        "mix_reps": 1.4
+      },
+      "growth_rate": 0.13517129413978185,
+      "doubling_time_hours": 5.127917025364539,
+      "r_squared": 0.9930380707335792,
+      "max_od": 0.5696,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E12",
+      "parent_well": "E1",
+      "params": {
+        "cell_volume_uL": 66.4,
+        "mix_height_mm": 2.1,
+        "mix_reps": 4.6
+      },
+      "growth_rate": 0.09980524005174532,
+      "doubling_time_hours": 6.944997879876589,
+      "r_squared": 0.9972222876661413,
+      "max_od": 0.2287,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E1",
+      "parent_well": "stock",
+      "params": {
+        "cell_volume_uL": 29.5,
+        "mix_height_mm": 3.7,
+        "mix_reps": 1.2
+      },
+      "growth_rate": 0.09505231106795971,
+      "doubling_time_hours": 7.292270674664235,
+      "r_squared": 0.9873361346238907,
+      "max_od": 0.2264,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E2",
+      "parent_well": "E1",
+      "params": {
+        "cell_volume_uL": 75.7,
+        "mix_height_mm": 2.7,
+        "mix_reps": 1.8
+      },
+      "growth_rate": 0.13334376414169205,
+      "doubling_time_hours": 5.198197193709052,
+      "r_squared": 0.9942979057497656,
+      "max_od": 0.4369,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E3",
+      "parent_well": "E1",
+      "params": {
+        "cell_volume_uL": 71.0,
+        "mix_height_mm": 3.1,
+        "mix_reps": 3.2
+      },
+      "growth_rate": 0.1358954861565327,
+      "doubling_time_hours": 5.100590167958456,
+      "r_squared": 0.996462451527369,
+      "max_od": 0.3564,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E4",
+      "parent_well": "E1",
+      "params": {
+        "cell_volume_uL": 62.8,
+        "mix_height_mm": 1.4,
+        "mix_reps": 2.5
+      },
+      "growth_rate": 0.11864520665870076,
+      "doubling_time_hours": 5.842184442847981,
+      "r_squared": 0.9962495195100773,
+      "max_od": 0.4015,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E5",
+      "parent_well": "E1",
+      "params": {
+        "cell_volume_uL": 51.2,
+        "mix_height_mm": 1.3,
+        "mix_reps": 4.9
+      },
+      "growth_rate": 0.039402183370287676,
+      "doubling_time_hours": 17.59159318776818,
+      "r_squared": 0.979631612875117,
+      "max_od": 0.1994,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E6",
+      "parent_well": "E1",
+      "params": {
+        "cell_volume_uL": 65.0,
+        "mix_height_mm": 1.5,
+        "mix_reps": 4.7
+      },
+      "growth_rate": 0.10674853925334911,
+      "doubling_time_hours": 6.49327087197775,
+      "r_squared": 0.9986378630635321,
+      "max_od": 0.4717,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E7",
+      "parent_well": "E1",
+      "params": {
+        "cell_volume_uL": 68.1,
+        "mix_height_mm": 1.0,
+        "mix_reps": 3.1
+      },
+      "growth_rate": 0.0981985495977751,
+      "doubling_time_hours": 7.058629515396121,
+      "r_squared": 0.99013266108171,
+      "max_od": 0.4133,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E8",
+      "parent_well": "E1",
+      "params": {
+        "cell_volume_uL": 74.0,
+        "mix_height_mm": 3.9,
+        "mix_reps": 3.1
+      },
+      "growth_rate": 0.04917353436144831,
+      "doubling_time_hours": 14.095939809105275,
+      "r_squared": 0.9446536682149599,
+      "max_od": 0.232,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E9",
+      "parent_well": "E1",
+      "params": {
+        "cell_volume_uL": 54.1,
+        "mix_height_mm": 2.1,
+        "mix_reps": 3.4
+      },
+      "growth_rate": 0.14480845979561344,
+      "doubling_time_hours": 4.786648387382007,
+      "r_squared": 0.999052695385334,
+      "max_od": 0.3992,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F10",
+      "parent_well": "F1",
+      "params": {
+        "cell_volume_uL": 60.5,
+        "mix_height_mm": 2.5,
+        "mix_reps": 1.7
+      },
+      "growth_rate": 0.06368654624254365,
+      "doubling_time_hours": 10.883730104002904,
+      "r_squared": 0.9733852154392088,
+      "max_od": 0.1701,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F11",
+      "parent_well": "F1",
+      "params": {
+        "cell_volume_uL": 55.1,
+        "mix_height_mm": 1.8,
+        "mix_reps": 4.1
+      },
+      "growth_rate": 0.0692413654062205,
+      "doubling_time_hours": 10.01059376130781,
+      "r_squared": 0.9888257151306094,
+      "max_od": 0.2105,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F12",
+      "parent_well": "F1",
+      "params": {
+        "cell_volume_uL": 51.1,
+        "mix_height_mm": 1.7,
+        "mix_reps": 2.4
+      },
+      "growth_rate": 0.0903521742178884,
+      "doubling_time_hours": 7.671615946821481,
+      "r_squared": 0.9835497336444805,
+      "max_od": 0.2909,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F1",
+      "parent_well": "stock",
+      "params": {
+        "cell_volume_uL": 35.2,
+        "mix_height_mm": 1.7,
+        "mix_reps": 3.2
+      },
+      "growth_rate": 0.11164688391400528,
+      "doubling_time_hours": 6.208388055808471,
+      "r_squared": 0.9950984913717046,
+      "max_od": 0.3886,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F2",
+      "parent_well": "F1",
+      "params": {
+        "cell_volume_uL": 30.3,
+        "mix_height_mm": 1.3,
+        "mix_reps": 1.4
+      },
+      "growth_rate": 0.0437626891325551,
+      "doubling_time_hours": 15.838770292667242,
+      "r_squared": 0.9031157751648455,
+      "max_od": 0.1548,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F3",
+      "parent_well": "F1",
+      "params": {
+        "cell_volume_uL": 54.6,
+        "mix_height_mm": 1.0,
+        "mix_reps": 1.1
+      },
+      "growth_rate": 0.04944012190925767,
+      "doubling_time_hours": 14.019932673955509,
+      "r_squared": 0.9585148094788374,
+      "max_od": 0.2909,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F4",
+      "parent_well": "F1",
+      "params": {
+        "cell_volume_uL": 79.1,
+        "mix_height_mm": 1.9,
+        "mix_reps": 1.0
+      },
+      "growth_rate": 0.09578840751016877,
+      "doubling_time_hours": 7.236232427043551,
+      "r_squared": 0.9955418909866819,
+      "max_od": 0.4382,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F5",
+      "parent_well": "F1",
+      "params": {
+        "cell_volume_uL": 62.0,
+        "mix_height_mm": 2.4,
+        "mix_reps": 4.8
+      },
+      "growth_rate": 0.03578773477755429,
+      "doubling_time_hours": 19.368288741054386,
+      "r_squared": 0.9683459576160838,
+      "max_od": 0.2138,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F6",
+      "parent_well": "F1",
+      "params": {
+        "cell_volume_uL": 24.3,
+        "mix_height_mm": 2.8,
+        "mix_reps": 2.2
+      },
+      "growth_rate": 0.12929230231180763,
+      "doubling_time_hours": 5.361086222196876,
+      "r_squared": 0.9973555077171682,
+      "max_od": 0.6039,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F7",
+      "parent_well": "F1",
+      "params": {
+        "cell_volume_uL": 38.3,
+        "mix_height_mm": 3.5,
+        "mix_reps": 2.9
+      },
+      "growth_rate": 0.06250465659758778,
+      "doubling_time_hours": 11.089528657400795,
+      "r_squared": 0.9721881809088492,
+      "max_od": 0.1563,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F8",
+      "parent_well": "F1",
+      "params": {
+        "cell_volume_uL": 34.4,
+        "mix_height_mm": 3.9,
+        "mix_reps": 2.5
+      },
+      "growth_rate": 0.08072853807492804,
+      "doubling_time_hours": 8.586148059767936,
+      "r_squared": 0.9491989699516615,
+      "max_od": 0.2262,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F9",
+      "parent_well": "F1",
+      "params": {
+        "cell_volume_uL": 71.0,
+        "mix_height_mm": 1.0,
+        "mix_reps": 1.7
+      },
+      "growth_rate": 0.13580274276236362,
+      "doubling_time_hours": 5.104073499994465,
+      "r_squared": 0.9960251365626565,
+      "max_od": 0.6672,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G10",
+      "parent_well": "G1",
+      "params": {
+        "cell_volume_uL": 60.6,
+        "mix_height_mm": 1.1,
+        "mix_reps": 3.1
+      },
+      "growth_rate": 0.07648018530802031,
+      "doubling_time_hours": 9.0630949411057,
+      "r_squared": 0.9772967456226768,
+      "max_od": 0.2213,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G11",
+      "parent_well": "G1",
+      "params": {
+        "cell_volume_uL": 22.4,
+        "mix_height_mm": 2.3,
+        "mix_reps": 1.7
+      },
+      "growth_rate": 0.13592215279757572,
+      "doubling_time_hours": 5.099589480400785,
+      "r_squared": 0.9993446804781042,
+      "max_od": 0.5041,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G12",
+      "parent_well": "G1",
+      "params": {
+        "cell_volume_uL": 36.2,
+        "mix_height_mm": 3.7,
+        "mix_reps": 3.3
+      },
+      "growth_rate": 0.02147349189427192,
+      "doubling_time_hours": 32.27920190962715,
+      "r_squared": 0.8973137399870156,
+      "max_od": 0.2204,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G1",
+      "parent_well": "stock",
+      "params": {
+        "cell_volume_uL": 48.5,
+        "mix_height_mm": 3.3,
+        "mix_reps": 1.2
+      },
+      "growth_rate": 0.023525623855751944,
+      "doubling_time_hours": 29.463498388395465,
+      "r_squared": 0.9054035191586398,
+      "max_od": 0.1866,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G2",
+      "parent_well": "G1",
+      "params": {
+        "cell_volume_uL": 52.4,
+        "mix_height_mm": 1.4,
+        "mix_reps": 1.1
+      },
+      "growth_rate": 0.06506648027301885,
+      "doubling_time_hours": 10.65290726732875,
+      "r_squared": 0.9650744135587154,
+      "max_od": 0.1988,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G3",
+      "parent_well": "G1",
+      "params": {
+        "cell_volume_uL": 53.7,
+        "mix_height_mm": 1.5,
+        "mix_reps": 4.5
+      },
+      "growth_rate": 0.0618307781275128,
+      "doubling_time_hours": 11.210390707528813,
+      "r_squared": 0.9085178305022312,
+      "max_od": 0.1911,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G4",
+      "parent_well": "G1",
+      "params": {
+        "cell_volume_uL": 39.9,
+        "mix_height_mm": 2.3,
+        "mix_reps": 4.4
+      },
+      "growth_rate": 0.03300521988521751,
+      "doubling_time_hours": 21.001138091808148,
+      "r_squared": 0.7559364281975568,
+      "max_od": 0.1311,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G5",
+      "parent_well": "G1",
+      "params": {
+        "cell_volume_uL": 56.0,
+        "mix_height_mm": 2.6,
+        "mix_reps": 3.2
+      },
+      "growth_rate": 0.09743470136918027,
+      "doubling_time_hours": 7.113966285313579,
+      "r_squared": 0.9972405104018052,
+      "max_od": 0.4378,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G6",
+      "parent_well": "G1",
+      "params": {
+        "cell_volume_uL": 65.5,
+        "mix_height_mm": 2.1,
+        "mix_reps": 2.8
+      },
+      "growth_rate": 0.09541016636672135,
+      "doubling_time_hours": 7.264919525407221,
+      "r_squared": 0.9859132211022071,
+      "max_od": 0.4496,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G7",
+      "parent_well": "G1",
+      "params": {
+        "cell_volume_uL": 78.8,
+        "mix_height_mm": 1.8,
+        "mix_reps": 4.7
+      },
+      "growth_rate": 0.028579619795168397,
+      "doubling_time_hours": 24.253198101576114,
+      "r_squared": 0.9402187204191129,
+      "max_od": 0.1444,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G8",
+      "parent_well": "G1",
+      "params": {
+        "cell_volume_uL": 35.1,
+        "mix_height_mm": 3.6,
+        "mix_reps": 1.4
+      },
+      "growth_rate": 0.06952935784612292,
+      "doubling_time_hours": 9.969129617074357,
+      "r_squared": 0.9595702266169865,
+      "max_od": 0.2051,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G9",
+      "parent_well": "G1",
+      "params": {
+        "cell_volume_uL": 28.1,
+        "mix_height_mm": 1.2,
+        "mix_reps": 4.7
+      },
+      "growth_rate": 0.07889916523953643,
+      "doubling_time_hours": 8.785228315858134,
+      "r_squared": 0.9826006030142213,
+      "max_od": 0.3967,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H10",
+      "parent_well": "H1",
+      "params": {
+        "cell_volume_uL": 73.2,
+        "mix_height_mm": 3.6,
+        "mix_reps": 3.4
+      },
+      "growth_rate": 0.0651643973913065,
+      "doubling_time_hours": 10.636900029899106,
+      "r_squared": 0.99691345674856,
+      "max_od": 0.3681,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H11",
+      "parent_well": "H1",
+      "params": {
+        "cell_volume_uL": 73.0,
+        "mix_height_mm": 1.2,
+        "mix_reps": 3.4
+      },
+      "growth_rate": 0.11520988015046352,
+      "doubling_time_hours": 6.016386612456316,
+      "r_squared": 0.9990868730213427,
+      "max_od": 0.5671,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H12",
+      "parent_well": "H1",
+      "params": {
+        "cell_volume_uL": 54.0,
+        "mix_height_mm": 1.2,
+        "mix_reps": 3.5
+      },
+      "growth_rate": 0.03044804521481628,
+      "doubling_time_hours": 22.764915634802524,
+      "r_squared": 0.3885966799959916,
+      "max_od": 0.1248,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H1",
+      "parent_well": "stock",
+      "params": {
+        "cell_volume_uL": 34.5,
+        "mix_height_mm": 2.5,
+        "mix_reps": 2.4
+      },
+      "growth_rate": 0.14912612136006506,
+      "doubling_time_hours": 4.648060140224135,
+      "r_squared": 0.9954825385869811,
+      "max_od": 0.5914,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H2",
+      "parent_well": "H1",
+      "params": {
+        "cell_volume_uL": 73.8,
+        "mix_height_mm": 1.5,
+        "mix_reps": 4.0
+      },
+      "growth_rate": 0.027795657482225518,
+      "doubling_time_hours": 24.937247158236566,
+      "r_squared": 0.9724773109573526,
+      "max_od": 0.1395,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H3",
+      "parent_well": "H1",
+      "params": {
+        "cell_volume_uL": 30.7,
+        "mix_height_mm": 1.7,
+        "mix_reps": 4.4
+      },
+      "growth_rate": 0.10355126330051093,
+      "doubling_time_hours": 6.693758805707639,
+      "r_squared": 0.9935227410641635,
+      "max_od": 0.3541,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H4",
+      "parent_well": "H1",
+      "params": {
+        "cell_volume_uL": 65.6,
+        "mix_height_mm": 3.9,
+        "mix_reps": 5.0
+      },
+      "growth_rate": 0.12843833584499156,
+      "doubling_time_hours": 5.396731248499546,
+      "r_squared": 0.9984183734446959,
+      "max_od": 0.3263,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H5",
+      "parent_well": "H1",
+      "params": {
+        "cell_volume_uL": 55.7,
+        "mix_height_mm": 2.6,
+        "mix_reps": 1.3
+      },
+      "growth_rate": 0.11498577033135438,
+      "doubling_time_hours": 6.028112683530352,
+      "r_squared": 0.9899148830259693,
+      "max_od": 0.3134,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H6",
+      "parent_well": "H1",
+      "params": {
+        "cell_volume_uL": 21.3,
+        "mix_height_mm": 1.7,
+        "mix_reps": 4.5
+      },
+      "growth_rate": 0.1473666833774996,
+      "doubling_time_hours": 4.703554186561663,
+      "r_squared": 0.9986455561682942,
+      "max_od": 0.5823,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H7",
+      "parent_well": "H1",
+      "params": {
+        "cell_volume_uL": 55.4,
+        "mix_height_mm": 1.1,
+        "mix_reps": 3.0
+      },
+      "growth_rate": 0.027377036018741033,
+      "doubling_time_hours": 25.318561881039617,
+      "r_squared": 0.8956469697128963,
+      "max_od": 0.2612,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H8",
+      "parent_well": "H1",
+      "params": {
+        "cell_volume_uL": 31.9,
+        "mix_height_mm": 2.6,
+        "mix_reps": 3.4
+      },
+      "growth_rate": 0.09027266145342035,
+      "doubling_time_hours": 7.678373157499086,
+      "r_squared": 0.9858587519888521,
+      "max_od": 0.2553,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H9",
+      "parent_well": "H1",
+      "params": {
+        "cell_volume_uL": 36.2,
+        "mix_height_mm": 2.7,
+        "mix_reps": 1.6
+      },
+      "growth_rate": 0.051615361885314466,
+      "doubling_time_hours": 13.429086908274853,
+      "r_squared": 0.9913835380614308,
+      "max_od": 0.3171,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    }
+  ]
+}

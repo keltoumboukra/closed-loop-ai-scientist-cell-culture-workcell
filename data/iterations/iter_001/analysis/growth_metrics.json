@@ -1,0 +1,1925 @@
+{
+  "iteration_id": "iter_001",
+  "results": [
+    {
+      "well": "A10",
+      "parent_well": "A1",
+      "params": {
+        "nacl_g_per_L": 12.823106450468774,
+        "mops_mM": 239.1965228847861,
+        "glucose_g_per_L": 19.25964415884514,
+        "mgso4_mM": 23.655371067872125,
+        "casamino_g_per_L": 2.545756999417343,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.1302319448941467,
+      "doubling_time_hours": 5.322405198842262,
+      "r_squared": 0.9869257082392018,
+      "max_od": 0.3329,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A11",
+      "parent_well": "A1",
+      "params": {
+        "nacl_g_per_L": 10.696194011719829,
+        "mops_mM": 112.12011692086628,
+        "glucose_g_per_L": 16.2809643684866,
+        "mgso4_mM": 18.469135429206325,
+        "casamino_g_per_L": 1.7459163413330194,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.11400599183927113,
+      "doubling_time_hours": 6.079918865467736,
+      "r_squared": 0.9975015044218012,
+      "max_od": 0.5406,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A12",
+      "parent_well": "A1",
+      "params": {
+        "nacl_g_per_L": 5.75440630949919,
+        "mops_mM": 276.4902963814551,
+        "glucose_g_per_L": 18.68097819763944,
+        "mgso4_mM": 8.412125180251644,
+        "casamino_g_per_L": 0.38410899446990454,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.06876204739871906,
+      "doubling_time_hours": 10.080374374845295,
+      "r_squared": 0.9920026904555057,
+      "max_od": 0.3821,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A1",
+      "parent_well": "stock",
+      "params": {
+        "nacl_g_per_L": 9.763059710448427,
+        "mops_mM": 312.05983578611966,
+        "glucose_g_per_L": 17.436624905940825,
+        "mgso4_mM": 2.32060480715083,
+        "casamino_g_per_L": 3.583422106429678,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.024502285239875955,
+      "doubling_time_hours": 28.289082988548802,
+      "r_squared": 0.9220006029277191,
+      "max_od": 0.1971,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A2",
+      "parent_well": "A1",
+      "params": {
+        "nacl_g_per_L": 10.018479582532514,
+        "mops_mM": 387.56544434519225,
+        "glucose_g_per_L": 14.711662379415115,
+        "mgso4_mM": 4.177692899521945,
+        "casamino_g_per_L": 4.2495438435566255,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.11849095906008224,
+      "doubling_time_hours": 5.849789604694455,
+      "r_squared": 0.991448135096806,
+      "max_od": 0.3403,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A3",
+      "parent_well": "A1",
+      "params": {
+        "nacl_g_per_L": 10.325870941432576,
+        "mops_mM": 329.01817901593927,
+        "glucose_g_per_L": 13.437857776742847,
+        "mgso4_mM": 6.915460594351088,
+        "casamino_g_per_L": 0.20461253634976095,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.03185618915031184,
+      "doubling_time_hours": 21.758634634210793,
+      "r_squared": 0.9419605820063541,
+      "max_od": 0.2601,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A4",
+      "parent_well": "A1",
+      "params": {
+        "nacl_g_per_L": 8.850906190334104,
+        "mops_mM": 373.7067463171466,
+        "glucose_g_per_L": 13.481477312299509,
+        "mgso4_mM": 12.985387589748104,
+        "casamino_g_per_L": 4.638246603529698,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.04873081351559133,
+      "doubling_time_hours": 14.22400182870278,
+      "r_squared": 0.9354285329138434,
+      "max_od": 0.1349,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A5",
+      "parent_well": "A1",
+      "params": {
+        "nacl_g_per_L": 5.462099038369416,
+        "mops_mM": 195.62926794522969,
+        "glucose_g_per_L": 16.9672186434901,
+        "mgso4_mM": 24.220853297783556,
+        "casamino_g_per_L": 2.574152916082568,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.04479215944600986,
+      "doubling_time_hours": 15.474743551835871,
+      "r_squared": 0.8352010532196326,
+      "max_od": 0.1281,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A6",
+      "parent_well": "A1",
+      "params": {
+        "nacl_g_per_L": 5.555425919725731,
+        "mops_mM": 345.31525890931977,
+        "glucose_g_per_L": 19.435733824050907,
+        "mgso4_mM": 16.698496288462024,
+        "casamino_g_per_L": 0.5926823327594385,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.04794374526392049,
+      "doubling_time_hours": 14.457510082792075,
+      "r_squared": 0.9336480572447373,
+      "max_od": 0.2294,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A7",
+      "parent_well": "A1",
+      "params": {
+        "nacl_g_per_L": 13.299294516497413,
+        "mops_mM": 120.04970137445645,
+        "glucose_g_per_L": 6.76310723510577,
+        "mgso4_mM": 23.437835256880753,
+        "casamino_g_per_L": 2.7207162936600646,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.01718655734164947,
+      "doubling_time_hours": 40.330775197205426,
+      "r_squared": 0.713586394122789,
+      "max_od": 0.2187,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A8",
+      "parent_well": "A1",
+      "params": {
+        "nacl_g_per_L": 5.696349152995559,
+        "mops_mM": 320.7700015600117,
+        "glucose_g_per_L": 19.793293772551475,
+        "mgso4_mM": 19.521221766349306,
+        "casamino_g_per_L": 4.816898184730432,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.06533030014111854,
+      "doubling_time_hours": 10.609888199850504,
+      "r_squared": 0.9944004484559,
+      "max_od": 0.3044,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "A9",
+      "parent_well": "A1",
+      "params": {
+        "nacl_g_per_L": 9.3857493565366,
+        "mops_mM": 274.1312390220679,
+        "glucose_g_per_L": 15.075755651077971,
+        "mgso4_mM": 12.5666294393891,
+        "casamino_g_per_L": 1.324777800644274,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.06474546640770025,
+      "doubling_time_hours": 10.705725342917733,
+      "r_squared": 0.9982954539082223,
+      "max_od": 0.3603,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B10",
+      "parent_well": "B1",
+      "params": {
+        "nacl_g_per_L": 6.3573587172296655,
+        "mops_mM": 380.3946110367022,
+        "glucose_g_per_L": 12.854771073293795,
+        "mgso4_mM": 6.566415941988196,
+        "casamino_g_per_L": 1.121774562386655,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.1301746663917566,
+      "doubling_time_hours": 5.324747124559094,
+      "r_squared": 0.9977454090845819,
+      "max_od": 0.5693,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B11",
+      "parent_well": "B1",
+      "params": {
+        "nacl_g_per_L": 6.836278297455793,
+        "mops_mM": 310.22002845247664,
+        "glucose_g_per_L": 19.182379712183455,
+        "mgso4_mM": 7.146154242296211,
+        "casamino_g_per_L": 0.24480967054122657,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.023752114928039084,
+      "doubling_time_hours": 29.18254575055518,
+      "r_squared": 0.8770464392012277,
+      "max_od": 0.1381,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B12",
+      "parent_well": "B1",
+      "params": {
+        "nacl_g_per_L": 6.619071379678514,
+        "mops_mM": 219.81197092913294,
+        "glucose_g_per_L": 13.20711576660326,
+        "mgso4_mM": 2.751541191967407,
+        "casamino_g_per_L": 3.6641207407693632,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.04266236812864615,
+      "doubling_time_hours": 16.2472739082321,
+      "r_squared": 0.8106962169167448,
+      "max_od": 0.1862,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B1",
+      "parent_well": "stock",
+      "params": {
+        "nacl_g_per_L": 6.035428120947671,
+        "mops_mM": 127.66520532763016,
+        "glucose_g_per_L": 17.842445893222628,
+        "mgso4_mM": 5.739001329283818,
+        "casamino_g_per_L": 3.562680208517004,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.09962500780982396,
+      "doubling_time_hours": 6.957562120176762,
+      "r_squared": 0.9898822633386944,
+      "max_od": 0.4733,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B2",
+      "parent_well": "B1",
+      "params": {
+        "nacl_g_per_L": 7.5014193265065785,
+        "mops_mM": 366.51902023078344,
+        "glucose_g_per_L": 16.6588574805891,
+        "mgso4_mM": 6.7263673057763205,
+        "casamino_g_per_L": 2.4216229041990984,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.1130148011855441,
+      "doubling_time_hours": 6.133242489379407,
+      "r_squared": 0.9993773547156898,
+      "max_od": 0.4427,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B3",
+      "parent_well": "B1",
+      "params": {
+        "nacl_g_per_L": 8.585005458321177,
+        "mops_mM": 251.63217857866533,
+        "glucose_g_per_L": 14.149542944771769,
+        "mgso4_mM": 8.670904700328434,
+        "casamino_g_per_L": 4.293274136867976,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.057429326201171714,
+      "doubling_time_hours": 12.069568396674018,
+      "r_squared": 0.9909174949468612,
+      "max_od": 0.1848,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B4",
+      "parent_well": "B1",
+      "params": {
+        "nacl_g_per_L": 13.280262582687737,
+        "mops_mM": 293.7721699499853,
+        "glucose_g_per_L": 19.97548722417148,
+        "mgso4_mM": 9.396045090127995,
+        "casamino_g_per_L": 0.4775985097693383,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.03525902353459006,
+      "doubling_time_hours": 19.65871743101306,
+      "r_squared": 0.9118000902400183,
+      "max_od": 0.1549,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B5",
+      "parent_well": "B1",
+      "params": {
+        "nacl_g_per_L": 12.672425529328962,
+        "mops_mM": 201.22156881532754,
+        "glucose_g_per_L": 9.972835652181764,
+        "mgso4_mM": 20.12176522590518,
+        "casamino_g_per_L": 3.8830263441237105,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.06845804787640786,
+      "doubling_time_hours": 10.125137979559872,
+      "r_squared": 0.9866829108925809,
+      "max_od": 0.3031,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B6",
+      "parent_well": "B1",
+      "params": {
+        "nacl_g_per_L": 6.955727053188923,
+        "mops_mM": 144.13417668906555,
+        "glucose_g_per_L": 11.771550434339504,
+        "mgso4_mM": 8.258102847480718,
+        "casamino_g_per_L": 2.6347880237775945,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.057790702693563255,
+      "doubling_time_hours": 11.994095040431965,
+      "r_squared": 0.8793056608772828,
+      "max_od": 0.1894,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B7",
+      "parent_well": "B1",
+      "params": {
+        "nacl_g_per_L": 7.736022990210426,
+        "mops_mM": 245.87150928372333,
+        "glucose_g_per_L": 11.277353747649963,
+        "mgso4_mM": 12.09182157812563,
+        "casamino_g_per_L": 0.5434096697283823,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.0981941154600748,
+      "doubling_time_hours": 7.058948260924813,
+      "r_squared": 0.9973156459927363,
+      "max_od": 0.411,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B8",
+      "parent_well": "B1",
+      "params": {
+        "nacl_g_per_L": 7.63886822256894,
+        "mops_mM": 152.76578403065838,
+        "glucose_g_per_L": 18.23769088843821,
+        "mgso4_mM": 13.215926087131688,
+        "casamino_g_per_L": 4.857284630146678,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.044831977806724314,
+      "doubling_time_hours": 15.460999368535123,
+      "r_squared": 0.973594003254075,
+      "max_od": 0.2507,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "B9",
+      "parent_well": "B1",
+      "params": {
+        "nacl_g_per_L": 7.088199757035911,
+        "mops_mM": 113.309181670854,
+        "glucose_g_per_L": 10.456130084245059,
+        "mgso4_mM": 6.28073049544952,
+        "casamino_g_per_L": 0.48122875558139655,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.10410144289841511,
+      "doubling_time_hours": 6.658382067156709,
+      "r_squared": 0.9968133918359825,
+      "max_od": 0.5434,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C10",
+      "parent_well": "C1",
+      "params": {
+        "nacl_g_per_L": 11.45724176686782,
+        "mops_mM": 135.3666748015461,
+        "glucose_g_per_L": 6.311495632643907,
+        "mgso4_mM": 11.18453061846908,
+        "casamino_g_per_L": 3.351221560753321,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.022969544678443796,
+      "doubling_time_hours": 30.176792368480964,
+      "r_squared": 0.8361467224307566,
+      "max_od": 0.2287,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C11",
+      "parent_well": "C1",
+      "params": {
+        "nacl_g_per_L": 9.515576659504468,
+        "mops_mM": 363.10891331677,
+        "glucose_g_per_L": 17.557880303500646,
+        "mgso4_mM": 18.86447204223797,
+        "casamino_g_per_L": 1.2533660963174276,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.08958476280854363,
+      "doubling_time_hours": 7.737333435165834,
+      "r_squared": 0.9967340376434468,
+      "max_od": 0.3913,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C12",
+      "parent_well": "C1",
+      "params": {
+        "nacl_g_per_L": 11.232312507903917,
+        "mops_mM": 106.22578472363534,
+        "glucose_g_per_L": 12.75952965875645,
+        "mgso4_mM": 13.887552438625285,
+        "casamino_g_per_L": 2.7073578775051215,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.03276108762242926,
+      "doubling_time_hours": 21.15763641758325,
+      "r_squared": 0.9081128211782137,
+      "max_od": 0.2206,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C1",
+      "parent_well": "stock",
+      "params": {
+        "nacl_g_per_L": 8.043230802464677,
+        "mops_mM": 140.4744964990892,
+        "glucose_g_per_L": 9.22800113239007,
+        "mgso4_mM": 24.265956184961375,
+        "casamino_g_per_L": 2.188769594317968,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.0588924206629717,
+      "doubling_time_hours": 11.769717949388994,
+      "r_squared": 0.9730158677226655,
+      "max_od": 0.3279,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C2",
+      "parent_well": "C1",
+      "params": {
+        "nacl_g_per_L": 8.466105499915917,
+        "mops_mM": 225.18833590593027,
+        "glucose_g_per_L": 13.669484348940118,
+        "mgso4_mM": 2.9573690829800245,
+        "casamino_g_per_L": 1.7607251836509823,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.13833985913807972,
+      "doubling_time_hours": 5.010466143876159,
+      "r_squared": 0.9971473260457031,
+      "max_od": 0.4922,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C3",
+      "parent_well": "C1",
+      "params": {
+        "nacl_g_per_L": 9.357077121062469,
+        "mops_mM": 341.9739412459685,
+        "glucose_g_per_L": 15.813285392908874,
+        "mgso4_mM": 2.2129223210641165,
+        "casamino_g_per_L": 3.107913156822193,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.05518754452779179,
+      "doubling_time_hours": 12.559848177533695,
+      "r_squared": 0.938746206262494,
+      "max_od": 0.1883,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C4",
+      "parent_well": "C1",
+      "params": {
+        "nacl_g_per_L": 10.258253920217166,
+        "mops_mM": 102.7283076978775,
+        "glucose_g_per_L": 16.33840035315562,
+        "mgso4_mM": 1.4336997534004976,
+        "casamino_g_per_L": 2.9479778076698118,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.09733621606719113,
+      "doubling_time_hours": 7.121164234301713,
+      "r_squared": 0.9860500183328117,
+      "max_od": 0.2852,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C5",
+      "parent_well": "C1",
+      "params": {
+        "nacl_g_per_L": 10.951553679876142,
+        "mops_mM": 150.50646339063024,
+        "glucose_g_per_L": 15.523396500112684,
+        "mgso4_mM": 15.65758030226954,
+        "casamino_g_per_L": 4.963791780489387,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.04892293171662217,
+      "doubling_time_hours": 14.16814479914825,
+      "r_squared": 0.7897168380440999,
+      "max_od": 0.2243,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C6",
+      "parent_well": "C1",
+      "params": {
+        "nacl_g_per_L": 12.537469853984874,
+        "mops_mM": 397.01235915943914,
+        "glucose_g_per_L": 17.217355738744878,
+        "mgso4_mM": 9.072343875035555,
+        "casamino_g_per_L": 3.1526762920916287,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.033503590439343936,
+      "doubling_time_hours": 20.68874325021502,
+      "r_squared": 0.9792669458188464,
+      "max_od": 0.1955,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C7",
+      "parent_well": "C1",
+      "params": {
+        "nacl_g_per_L": 9.156935273477444,
+        "mops_mM": 192.47385268706515,
+        "glucose_g_per_L": 5.709276908139336,
+        "mgso4_mM": 7.987070184251637,
+        "casamino_g_per_L": 2.3879841806515554,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.10576262715523543,
+      "doubling_time_hours": 6.553800706392847,
+      "r_squared": 0.9709093589741394,
+      "max_od": 0.2555,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C8",
+      "parent_well": "C1",
+      "params": {
+        "nacl_g_per_L": 13.600817861413493,
+        "mops_mM": 116.92663710081574,
+        "glucose_g_per_L": 10.673485700706271,
+        "mgso4_mM": 22.6048456444009,
+        "casamino_g_per_L": 1.2073663782368151,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.030716588510243028,
+      "doubling_time_hours": 22.56589075081701,
+      "r_squared": 0.8879317016247126,
+      "max_od": 0.1716,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "C9",
+      "parent_well": "C1",
+      "params": {
+        "nacl_g_per_L": 13.759115580816236,
+        "mops_mM": 376.3625951230636,
+        "glucose_g_per_L": 5.348826534361803,
+        "mgso4_mM": 5.297794148108672,
+        "casamino_g_per_L": 1.0094302088758584,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.0889677180298055,
+      "doubling_time_hours": 7.790996508730624,
+      "r_squared": 0.9893942046372592,
+      "max_od": 0.4688,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D10",
+      "parent_well": "D1",
+      "params": {
+        "nacl_g_per_L": 12.016498870277413,
+        "mops_mM": 254.9943710850967,
+        "glucose_g_per_L": 8.990578367437898,
+        "mgso4_mM": 12.261699421381724,
+        "casamino_g_per_L": 4.0559251053480345,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.026256194130623717,
+      "doubling_time_hours": 26.399377499707708,
+      "r_squared": 0.7760047902108722,
+      "max_od": 0.1911,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D11",
+      "parent_well": "D1",
+      "params": {
+        "nacl_g_per_L": 7.425342328646909,
+        "mops_mM": 351.7289669809395,
+        "glucose_g_per_L": 11.940766331352183,
+        "mgso4_mM": 18.171441328937313,
+        "casamino_g_per_L": 4.381382348692744,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.036732879149484754,
+      "doubling_time_hours": 18.869938774447196,
+      "r_squared": 0.9411494160505051,
+      "max_od": 0.2488,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D12",
+      "parent_well": "D1",
+      "params": {
+        "nacl_g_per_L": 6.410131685541721,
+        "mops_mM": 144.78454340712486,
+        "glucose_g_per_L": 12.288432123701359,
+        "mgso4_mM": 10.607542202714502,
+        "casamino_g_per_L": 2.7941725632300103,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.05531757124375734,
+      "doubling_time_hours": 12.530325626654621,
+      "r_squared": 0.9292148491848634,
+      "max_od": 0.2517,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D1",
+      "parent_well": "stock",
+      "params": {
+        "nacl_g_per_L": 7.851073595481371,
+        "mops_mM": 163.80629062845424,
+        "glucose_g_per_L": 6.151022705717744,
+        "mgso4_mM": 13.340889142997778,
+        "casamino_g_per_L": 3.6858954585837056,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.14844019684878326,
+      "doubling_time_hours": 4.6695382738279285,
+      "r_squared": 0.9957019392205875,
+      "max_od": 0.5344,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D2",
+      "parent_well": "D1",
+      "params": {
+        "nacl_g_per_L": 13.968695485569906,
+        "mops_mM": 187.50707465142264,
+        "glucose_g_per_L": 7.521312396011693,
+        "mgso4_mM": 20.19894692948538,
+        "casamino_g_per_L": 1.9300315356587339,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.08564217221250386,
+      "doubling_time_hours": 8.093526386043077,
+      "r_squared": 0.9929975253216863,
+      "max_od": 0.2617,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D3",
+      "parent_well": "D1",
+      "params": {
+        "nacl_g_per_L": 7.907616706192504,
+        "mops_mM": 360.1986291293304,
+        "glucose_g_per_L": 5.867249557476406,
+        "mgso4_mM": 24.8046811427874,
+        "casamino_g_per_L": 3.317302217021245,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.13291936424770523,
+      "doubling_time_hours": 5.214794582286848,
+      "r_squared": 0.9990079968814487,
+      "max_od": 0.6904,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D4",
+      "parent_well": "D1",
+      "params": {
+        "nacl_g_per_L": 7.181490338378243,
+        "mops_mM": 134.05363442872516,
+        "glucose_g_per_L": 16.147150395393716,
+        "mgso4_mM": 3.782109880581476,
+        "casamino_g_per_L": 4.755976352543739,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.09881825071023535,
+      "doubling_time_hours": 7.014364002379074,
+      "r_squared": 0.9968083301600459,
+      "max_od": 0.4117,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D5",
+      "parent_well": "D1",
+      "params": {
+        "nacl_g_per_L": 11.104853219091286,
+        "mops_mM": 386.93054548437254,
+        "glucose_g_per_L": 10.15015176144605,
+        "mgso4_mM": 17.318852795193997,
+        "casamino_g_per_L": 0.9076627753882647,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.09127732812877996,
+      "doubling_time_hours": 7.593859228460416,
+      "r_squared": 0.9875204925820131,
+      "max_od": 0.4038,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D6",
+      "parent_well": "D1",
+      "params": {
+        "nacl_g_per_L": 8.28294259605703,
+        "mops_mM": 223.13048621494795,
+        "glucose_g_per_L": 9.63304809912609,
+        "mgso4_mM": 21.273350837472076,
+        "casamino_g_per_L": 0.8014349350212655,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.0193899137374427,
+      "doubling_time_hours": 35.74782177712582,
+      "r_squared": 0.798793847661792,
+      "max_od": 0.1787,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D7",
+      "parent_well": "D1",
+      "params": {
+        "nacl_g_per_L": 6.773670684636963,
+        "mops_mM": 216.87405080938214,
+        "glucose_g_per_L": 12.390572870405965,
+        "mgso4_mM": 4.753988985215842,
+        "casamino_g_per_L": 1.6516564932598223,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.14554662776875257,
+      "doubling_time_hours": 4.762371971003214,
+      "r_squared": 0.9834531589561424,
+      "max_od": 0.326,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D8",
+      "parent_well": "D1",
+      "params": {
+        "nacl_g_per_L": 14.59218526023526,
+        "mops_mM": 125.36607914957946,
+        "glucose_g_per_L": 17.93752523366733,
+        "mgso4_mM": 19.357673240447692,
+        "casamino_g_per_L": 0.008320481297991875,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.0593404449617907,
+      "doubling_time_hours": 11.680855797530041,
+      "r_squared": 0.9952965842658666,
+      "max_od": 0.322,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "D9",
+      "parent_well": "D1",
+      "params": {
+        "nacl_g_per_L": 5.3547143897759,
+        "mops_mM": 302.18045207800384,
+        "glucose_g_per_L": 10.889823288247213,
+        "mgso4_mM": 4.345438281132777,
+        "casamino_g_per_L": 4.626117047701889,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.1435054135423837,
+      "doubling_time_hours": 4.830111725055079,
+      "r_squared": 0.9997355929272576,
+      "max_od": 0.7512,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E10",
+      "parent_well": "E1",
+      "params": {
+        "nacl_g_per_L": 9.022396663927204,
+        "mops_mM": 208.09599519573786,
+        "glucose_g_per_L": 14.498557724538413,
+        "mgso4_mM": 16.26121463428488,
+        "casamino_g_per_L": 2.092031170495611,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.07907359352753861,
+      "doubling_time_hours": 8.765848997599255,
+      "r_squared": 0.9870124710991013,
+      "max_od": 0.3323,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E11",
+      "parent_well": "E1",
+      "params": {
+        "nacl_g_per_L": 13.491113486289327,
+        "mops_mM": 329.85097708652916,
+        "glucose_g_per_L": 9.554485003863007,
+        "mgso4_mM": 13.565766566380919,
+        "casamino_g_per_L": 4.1150846626538415,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.044244726494880676,
+      "doubling_time_hours": 15.666210088114019,
+      "r_squared": 0.9896652649167278,
+      "max_od": 0.2741,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E12",
+      "parent_well": "E1",
+      "params": {
+        "nacl_g_per_L": 8.74708459167647,
+        "mops_mM": 183.06863906576285,
+        "glucose_g_per_L": 14.01583917241452,
+        "mgso4_mM": 24.707941063178403,
+        "casamino_g_per_L": 1.6481948783133935,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.07458622884427156,
+      "doubling_time_hours": 9.29323269590645,
+      "r_squared": 0.9829082389184084,
+      "max_od": 0.2704,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E1",
+      "parent_well": "stock",
+      "params": {
+        "nacl_g_per_L": 14.801304366619574,
+        "mops_mM": 382.1177431148764,
+        "glucose_g_per_L": 7.168206664477604,
+        "mgso4_mM": 3.202335988917315,
+        "casamino_g_per_L": 2.477346697533324,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.05009789550913579,
+      "doubling_time_hours": 13.835854251273764,
+      "r_squared": 0.9529697973631222,
+      "max_od": 0.2111,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E2",
+      "parent_well": "E1",
+      "params": {
+        "nacl_g_per_L": 6.516381459548569,
+        "mops_mM": 241.01095075503008,
+        "glucose_g_per_L": 17.749157753214767,
+        "mgso4_mM": 10.174495610990169,
+        "casamino_g_per_L": 3.9577428902257212,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.048913542542798207,
+      "doubling_time_hours": 14.170864438073723,
+      "r_squared": 0.984064749662575,
+      "max_od": 0.2652,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E3",
+      "parent_well": "E1",
+      "params": {
+        "nacl_g_per_L": 12.138015622986423,
+        "mops_mM": 167.08647655131938,
+        "glucose_g_per_L": 15.882655444637193,
+        "mgso4_mM": 22.758431266186044,
+        "casamino_g_per_L": 4.5402934427661945,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.10339348792309278,
+      "doubling_time_hours": 6.703973281910455,
+      "r_squared": 0.9973949472813822,
+      "max_od": 0.5493,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E4",
+      "parent_well": "E1",
+      "params": {
+        "nacl_g_per_L": 14.079511985046798,
+        "mops_mM": 107.00726012357316,
+        "glucose_g_per_L": 12.57456559424483,
+        "mgso4_mM": 16.923510392527415,
+        "casamino_g_per_L": 2.2719066162668904,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.03678313605482647,
+      "doubling_time_hours": 18.844156722438964,
+      "r_squared": 0.9511043183873954,
+      "max_od": 0.2021,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E5",
+      "parent_well": "E1",
+      "params": {
+        "nacl_g_per_L": 6.214457662881624,
+        "mops_mM": 270.2664470163144,
+        "glucose_g_per_L": 8.975886544498955,
+        "mgso4_mM": 9.830006620722399,
+        "casamino_g_per_L": 1.4871481822413888,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.0979953808013656,
+      "doubling_time_hours": 7.073263809902824,
+      "r_squared": 0.9948088632460175,
+      "max_od": 0.3134,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E6",
+      "parent_well": "E1",
+      "params": {
+        "nacl_g_per_L": 14.50295318159151,
+        "mops_mM": 395.9109560090244,
+        "glucose_g_per_L": 18.93732617531512,
+        "mgso4_mM": 17.410129034650158,
+        "casamino_g_per_L": 2.831454920642678,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.031097418277881424,
+      "doubling_time_hours": 22.289541027685832,
+      "r_squared": 0.7501838623969175,
+      "max_od": 0.1431,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E7",
+      "parent_well": "E1",
+      "params": {
+        "nacl_g_per_L": 13.850599902594364,
+        "mops_mM": 175.10410127163203,
+        "glucose_g_per_L": 7.906686683629969,
+        "mgso4_mM": 14.527360821112259,
+        "casamino_g_per_L": 2.9197263831507585,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.13704598479021027,
+      "doubling_time_hours": 5.057770803143293,
+      "r_squared": 0.9917490787371687,
+      "max_od": 0.4112,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E8",
+      "parent_well": "E1",
+      "params": {
+        "nacl_g_per_L": 10.464863553923522,
+        "mops_mM": 370.12187464717005,
+        "glucose_g_per_L": 11.528566502236792,
+        "mgso4_mM": 17.820934663288376,
+        "casamino_g_per_L": 3.033941613587792,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.044539881087369074,
+      "doubling_time_hours": 15.562394053102057,
+      "r_squared": 0.7437863588952832,
+      "max_od": 0.1511,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "E9",
+      "parent_well": "E1",
+      "params": {
+        "nacl_g_per_L": 5.87632636733291,
+        "mops_mM": 198.07276082688242,
+        "glucose_g_per_L": 5.1014587205682895,
+        "mgso4_mM": 15.472908941224443,
+        "casamino_g_per_L": 0.6831057633710107,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.03349275260068183,
+      "doubling_time_hours": 20.695437870515143,
+      "r_squared": 0.7232056863551467,
+      "max_od": 0.1521,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F10",
+      "parent_well": "F1",
+      "params": {
+        "nacl_g_per_L": 5.188334464893739,
+        "mops_mM": 319.7920567517451,
+        "glucose_g_per_L": 8.40250127548731,
+        "mgso4_mM": 22.41570233924378,
+        "casamino_g_per_L": 1.3560462802329452,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.07036718390735322,
+      "doubling_time_hours": 9.850432290605179,
+      "r_squared": 0.8753898791585246,
+      "max_od": 0.1762,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F11",
+      "parent_well": "F1",
+      "params": {
+        "nacl_g_per_L": 6.11937475808258,
+        "mops_mM": 178.4567360576759,
+        "glucose_g_per_L": 8.792675009490074,
+        "mgso4_mM": 1.1614863463535843,
+        "casamino_g_per_L": 1.576255720753923,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.12176946765959089,
+      "doubling_time_hours": 5.692290472170354,
+      "r_squared": 0.9954831667124374,
+      "max_od": 0.3702,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F12",
+      "parent_well": "F1",
+      "params": {
+        "nacl_g_per_L": 10.839602027025968,
+        "mops_mM": 259.8425153878587,
+        "glucose_g_per_L": 19.644114788686984,
+        "mgso4_mM": 3.543639347359273,
+        "casamino_g_per_L": 0.07686954950045301,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.14569100006308833,
+      "doubling_time_hours": 4.757652705107336,
+      "r_squared": 0.993885763758577,
+      "max_od": 0.5305,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F1",
+      "parent_well": "stock",
+      "params": {
+        "nacl_g_per_L": 12.321354435302368,
+        "mops_mM": 299.150905984508,
+        "glucose_g_per_L": 5.9774635041216815,
+        "mgso4_mM": 11.928569872583513,
+        "casamino_g_per_L": 3.015408315271271,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.10752936088170231,
+      "doubling_time_hours": 6.446120156173032,
+      "r_squared": 0.9924405173023799,
+      "max_od": 0.488,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F2",
+      "parent_well": "F1",
+      "params": {
+        "nacl_g_per_L": 9.924478223693479,
+        "mops_mM": 211.76530387798294,
+        "glucose_g_per_L": 6.657732403301532,
+        "mgso4_mM": 16.04991481319371,
+        "casamino_g_per_L": 0.7118984590464078,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.07213835712325921,
+      "doubling_time_hours": 9.608580070316812,
+      "r_squared": 0.9800358195239467,
+      "max_od": 0.1821,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F3",
+      "parent_well": "F1",
+      "params": {
+        "nacl_g_per_L": 9.802487842117833,
+        "mops_mM": 305.0260015005259,
+        "glucose_g_per_L": 8.236255911284424,
+        "mgso4_mM": 11.613082628142527,
+        "casamino_g_per_L": 3.4240793169839128,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.0523978038220285,
+      "doubling_time_hours": 13.22855406143072,
+      "r_squared": 0.994981061851008,
+      "max_od": 0.3108,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F4",
+      "parent_well": "F1",
+      "params": {
+        "nacl_g_per_L": 11.792960293170989,
+        "mops_mM": 154.81490151982018,
+        "glucose_g_per_L": 6.546223190331265,
+        "mgso4_mM": 14.239862485198856,
+        "casamino_g_per_L": 3.461650506782582,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.07359726984690294,
+      "doubling_time_hours": 9.418109965245046,
+      "r_squared": 0.9905032995984775,
+      "max_od": 0.2739,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F5",
+      "parent_well": "F1",
+      "params": {
+        "nacl_g_per_L": 10.208260579619132,
+        "mops_mM": 282.2846413467016,
+        "glucose_g_per_L": 11.110173677909476,
+        "mgso4_mM": 5.551541826445318,
+        "casamino_g_per_L": 4.9419297337327555,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.13936312767109502,
+      "doubling_time_hours": 4.973676984315482,
+      "r_squared": 0.9960726349914906,
+      "max_od": 0.4366,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F6",
+      "parent_well": "F1",
+      "params": {
+        "nacl_g_per_L": 5.240968812520181,
+        "mops_mM": 211.05615555385407,
+        "glucose_g_per_L": 7.761468383699176,
+        "mgso4_mM": 5.886624918725303,
+        "casamino_g_per_L": 0.15254772142013065,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.09135424879783066,
+      "doubling_time_hours": 7.587465166441225,
+      "r_squared": 0.9984290809365527,
+      "max_od": 0.4454,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F7",
+      "parent_well": "F1",
+      "params": {
+        "nacl_g_per_L": 11.292432861727454,
+        "mops_mM": 131.41953300284757,
+        "glucose_g_per_L": 18.7657519534146,
+        "mgso4_mM": 10.90815961935262,
+        "casamino_g_per_L": 1.5281511302490534,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.12869684396303036,
+      "doubling_time_hours": 5.385891053855678,
+      "r_squared": 0.9969990724236407,
+      "max_od": 0.7076,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F8",
+      "parent_well": "F1",
+      "params": {
+        "nacl_g_per_L": 12.042046344947149,
+        "mops_mM": 172.16762219458457,
+        "glucose_g_per_L": 7.666756153628153,
+        "mgso4_mM": 14.612979871325539,
+        "casamino_g_per_L": 2.013842952999505,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.13120870374916332,
+      "doubling_time_hours": 5.282783540679292,
+      "r_squared": 0.9994246394248086,
+      "max_od": 0.6807,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "F9",
+      "parent_well": "F1",
+      "params": {
+        "nacl_g_per_L": 9.671271504172804,
+        "mops_mM": 180.67332122150071,
+        "glucose_g_per_L": 17.053955761130098,
+        "mgso4_mM": 7.597122098970145,
+        "casamino_g_per_L": 0.8776040013242892,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.04939958043609774,
+      "doubling_time_hours": 14.031438616297276,
+      "r_squared": 0.95570156833202,
+      "max_od": 0.2246,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G10",
+      "parent_well": "G1",
+      "params": {
+        "nacl_g_per_L": 12.60397534303052,
+        "mops_mM": 257.1364147127449,
+        "glucose_g_per_L": 6.946929034599139,
+        "mgso4_mM": 20.53391832793819,
+        "casamino_g_per_L": 4.702149285025393,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.04430981267505499,
+      "doubling_time_hours": 15.64319817019143,
+      "r_squared": 0.9578111879206862,
+      "max_od": 0.3044,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G11",
+      "parent_well": "G1",
+      "params": {
+        "nacl_g_per_L": 13.000519697980522,
+        "mops_mM": 323.5765093739872,
+        "glucose_g_per_L": 5.597864358429917,
+        "mgso4_mM": 20.764235941610643,
+        "casamino_g_per_L": 0.7928165320444468,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.07331083577271755,
+      "doubling_time_hours": 9.454907630692956,
+      "r_squared": 0.959634105887258,
+      "max_od": 0.2255,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G12",
+      "parent_well": "G1",
+      "params": {
+        "nacl_g_per_L": 13.123715544256255,
+        "mops_mM": 204.93003719680286,
+        "glucose_g_per_L": 18.31038436170704,
+        "mgso4_mM": 11.292911566356056,
+        "casamino_g_per_L": 4.361047729474011,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.06060599469679547,
+      "doubling_time_hours": 11.436940916945222,
+      "r_squared": 0.9181891288527356,
+      "max_od": 0.2148,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G1",
+      "parent_well": "stock",
+      "params": {
+        "nacl_g_per_L": 10.534508260464175,
+        "mops_mM": 285.86870307875415,
+        "glucose_g_per_L": 9.82137271724304,
+        "mgso4_mM": 21.137502902295605,
+        "casamino_g_per_L": 3.2739156416012993,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.11499347483046621,
+      "doubling_time_hours": 6.027708803319889,
+      "r_squared": 0.9986149126976301,
+      "max_od": 0.4451,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G2",
+      "parent_well": "G1",
+      "params": {
+        "nacl_g_per_L": 9.117987464027646,
+        "mops_mM": 337.7179027790477,
+        "glucose_g_per_L": 10.384686421717937,
+        "mgso4_mM": 15.058882492753455,
+        "casamino_g_per_L": 3.235925116086063,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.14559885054248856,
+      "doubling_time_hours": 4.760663823768798,
+      "r_squared": 0.9968421082081432,
+      "max_od": 0.4799,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G3",
+      "parent_well": "G1",
+      "params": {
+        "nacl_g_per_L": 14.343553939517353,
+        "mops_mM": 314.0687655796485,
+        "glucose_g_per_L": 8.57749024366483,
+        "mgso4_mM": 16.485905581820894,
+        "casamino_g_per_L": 3.851547048325457,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.11768605658666674,
+      "doubling_time_hours": 5.88979867848232,
+      "r_squared": 0.9990020402098897,
+      "max_od": 0.4606,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G4",
+      "parent_well": "G1",
+      "params": {
+        "nacl_g_per_L": 8.624336570671266,
+        "mops_mM": 166.6391481218049,
+        "glucose_g_per_L": 7.374930282037216,
+        "mgso4_mM": 4.041435996958953,
+        "casamino_g_per_L": 0.3373476976042272,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.08430979655689644,
+      "doubling_time_hours": 8.221431065750172,
+      "r_squared": 0.9770600883702288,
+      "max_od": 0.3543,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G5",
+      "parent_well": "G1",
+      "params": {
+        "nacl_g_per_L": 11.892065460338348,
+        "mops_mM": 290.18554688172986,
+        "glucose_g_per_L": 14.757435679797632,
+        "mgso4_mM": 21.876440982332255,
+        "casamino_g_per_L": 2.1777498541654747,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.14509635502493448,
+      "doubling_time_hours": 4.7771508832239755,
+      "r_squared": 0.9988660118937328,
+      "max_od": 0.4054,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G6",
+      "parent_well": "G1",
+      "params": {
+        "nacl_g_per_L": 12.908333908173642,
+        "mops_mM": 236.04151788657327,
+        "glucose_g_per_L": 15.038117021054013,
+        "mgso4_mM": 10.256138822634291,
+        "casamino_g_per_L": 4.18816699383389,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.10058352627633829,
+      "doubling_time_hours": 6.891259495671552,
+      "r_squared": 0.973330383610353,
+      "max_od": 0.2784,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G7",
+      "parent_well": "G1",
+      "params": {
+        "nacl_g_per_L": 11.627683410150098,
+        "mops_mM": 346.8641495045363,
+        "glucose_g_per_L": 11.552032806963481,
+        "mgso4_mM": 21.642951747254454,
+        "casamino_g_per_L": 4.015513152210269,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.03906860791312211,
+      "doubling_time_hours": 17.741793669774847,
+      "r_squared": 0.7209785498740233,
+      "max_od": 0.1664,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G8",
+      "parent_well": "G1",
+      "params": {
+        "nacl_g_per_L": 13.625920423453387,
+        "mops_mM": 356.97581778202107,
+        "glucose_g_per_L": 15.319942360903509,
+        "mgso4_mM": 1.8845698408944673,
+        "casamino_g_per_L": 1.8165659314482117,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.09633998007352118,
+      "doubling_time_hours": 7.194803030174751,
+      "r_squared": 0.9870159327654342,
+      "max_od": 0.2732,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "G9",
+      "parent_well": "G1",
+      "params": {
+        "nacl_g_per_L": 8.11522444796181,
+        "mops_mM": 229.41693137613683,
+        "glucose_g_per_L": 5.275706133748113,
+        "mgso4_mM": 19.869006562854427,
+        "casamino_g_per_L": 1.0690105108221362,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.09852533245030197,
+      "doubling_time_hours": 7.035217880737238,
+      "r_squared": 0.9896390439048885,
+      "max_od": 0.3313,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H10",
+      "parent_well": "H1",
+      "params": {
+        "nacl_g_per_L": 8.364808720826321,
+        "mops_mM": 262.99968620580233,
+        "glucose_g_per_L": 13.035553438285001,
+        "mgso4_mM": 18.91759277959043,
+        "casamino_g_per_L": 1.040243925594291,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.11475990900771506,
+      "doubling_time_hours": 6.039976735371466,
+      "r_squared": 0.9988905743231631,
+      "max_od": 0.4562,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H11",
+      "parent_well": "H1",
+      "params": {
+        "nacl_g_per_L": 0.0,
+        "mops_mM": 0.0,
+        "glucose_g_per_L": 0.0,
+        "mgso4_mM": 0.0,
+        "casamino_g_per_L": 0.0,
+        "design_type": 1.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 0.0
+      },
+      "growth_rate": 0.05451889527786363,
+      "doubling_time_hours": 12.713888955878836,
+      "r_squared": 0.9815417451824332,
+      "max_od": 0.2693,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H12",
+      "parent_well": "H1",
+      "params": {
+        "nacl_g_per_L": 0.0,
+        "mops_mM": 0.0,
+        "glucose_g_per_L": 0.0,
+        "mgso4_mM": 0.0,
+        "casamino_g_per_L": 0.0,
+        "design_type": 2.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.1304024714161788,
+      "doubling_time_hours": 5.3154451218011785,
+      "r_squared": 0.9992330903599087,
+      "max_od": 0.6669,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H1",
+      "parent_well": "stock",
+      "params": {
+        "nacl_g_per_L": 7.33799958818833,
+        "mops_mM": 333.1109812343358,
+        "glucose_g_per_L": 12.103887749424004,
+        "mgso4_mM": 23.77887611219142,
+        "casamino_g_per_L": 4.516876063833913,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.08097778193082975,
+      "doubling_time_hours": 8.559720506447352,
+      "r_squared": 0.8813078428307436,
+      "max_od": 0.2,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H2",
+      "parent_well": "H1",
+      "params": {
+        "nacl_g_per_L": 14.698996955863539,
+        "mops_mM": 266.60590290960056,
+        "glucose_g_per_L": 11.026706264579826,
+        "mgso4_mM": 4.949590742825773,
+        "casamino_g_per_L": 2.3081906478351057,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.0292543013145244,
+      "doubling_time_hours": 23.69385524226505,
+      "r_squared": 0.9568968418740604,
+      "max_od": 0.2676,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H3",
+      "parent_well": "H1",
+      "params": {
+        "nacl_g_per_L": 10.983182155310068,
+        "mops_mM": 232.91108733575572,
+        "glucose_g_per_L": 18.40893116631996,
+        "mgso4_mM": 1.537926522215609,
+        "casamino_g_per_L": 4.426681728879055,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.14278138696100867,
+      "doubling_time_hours": 4.854604618382316,
+      "r_squared": 0.9931540536898468,
+      "max_od": 0.4418,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H4",
+      "parent_well": "H1",
+      "params": {
+        "nacl_g_per_L": 5.047553929228415,
+        "mops_mM": 390.62934046753685,
+        "glucose_g_per_L": 8.066973165865523,
+        "mgso4_mM": 23.090373728308627,
+        "casamino_g_per_L": 1.8948744960914454,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.06835059806870368,
+      "doubling_time_hours": 10.141055091620668,
+      "r_squared": 0.9973549416837376,
+      "max_od": 0.359,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H5",
+      "parent_well": "H1",
+      "params": {
+        "nacl_g_per_L": 14.160553990332073,
+        "mops_mM": 295.02091497968763,
+        "glucose_g_per_L": 15.608692814831949,
+        "mgso4_mM": 22.11082662506448,
+        "casamino_g_per_L": 2.0334035940366495,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.10885395454750485,
+      "doubling_time_hours": 6.367680287237057,
+      "r_squared": 0.9960887875496802,
+      "max_od": 0.5348,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H6",
+      "parent_well": "H1",
+      "params": {
+        "nacl_g_per_L": 14.9306456355766,
+        "mops_mM": 279.14630649440744,
+        "glucose_g_per_L": 13.863739859243143,
+        "mgso4_mM": 7.830338834991142,
+        "casamino_g_per_L": 0.3065605126065116,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.10513988368900105,
+      "doubling_time_hours": 6.5926188639340975,
+      "r_squared": 0.999613428811976,
+      "max_od": 0.5492,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H7",
+      "parent_well": "H1",
+      "params": {
+        "nacl_g_per_L": 12.432190645740661,
+        "mops_mM": 157.57804176837527,
+        "glucose_g_per_L": 9.34028443998642,
+        "mgso4_mM": 9.529272679710719,
+        "casamino_g_per_L": 3.734966802945237,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.05994945062678424,
+      "doubling_time_hours": 11.562194037025266,
+      "r_squared": 0.9694628257559005,
+      "max_od": 0.3142,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H8",
+      "parent_well": "H1",
+      "params": {
+        "nacl_g_per_L": 11.497043039343374,
+        "mops_mM": 247.5358242581775,
+        "glucose_g_per_L": 14.303491364258727,
+        "mgso4_mM": 14.828600795236923,
+        "casamino_g_per_L": 3.827651526619837,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.036786084926730384,
+      "doubling_time_hours": 18.842646123949823,
+      "r_squared": 0.9841407148884461,
+      "max_od": 0.2771,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    },
+    {
+      "well": "H9",
+      "parent_well": "H1",
+      "params": {
+        "nacl_g_per_L": 14.421579583098689,
+        "mops_mM": 352.6616653317303,
+        "glucose_g_per_L": 16.537191739042193,
+        "mgso4_mM": 18.02662979368969,
+        "casamino_g_per_L": 1.3919010743938722,
+        "design_type": 0.0,
+        "final_volume_uL": 200.0,
+        "inoculum_volume_uL": 20.0
+      },
+      "growth_rate": 0.09353016438771546,
+      "doubling_time_hours": 7.410947955641414,
+      "r_squared": 0.9923747524112936,
+      "max_od": 0.2275,
+      "n_datapoints": 35,
+      "time_range_hours": 8.5
+    }
+  ]
+}
