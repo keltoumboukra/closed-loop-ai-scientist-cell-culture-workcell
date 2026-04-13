@@ -8,7 +8,7 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
-from src.design.constants import SOURCE_PLATE_ID
+from src.design.constants import MAX_SOURCE_WELL_VOLUME_UL, SOURCE_PLATE_ID
 from src.design.lhs_plots import lhs_sample_matrix_from_mapping, write_lhs_visualization_files
 from src.design.reagent_iteration import (
     BOUNDS,
@@ -99,10 +99,9 @@ def test_dispensed_volume_never_exceeds_200_ul() -> None:
 
 def test_media_blank_no_cell_transfer() -> None:
     _mapping, xfer, _s = generate_reagent_lhs_bundle(seed=5)
-    cell_to_h11 = [
-        x for x in xfer if x.get("dst_well") == "H11" and x.get("src_plate") == "cell_culture_stock"
-    ]
-    assert cell_to_h11 == []
+    # Inoculum rows are identified by post_mix_volume; none should target the blank well.
+    inoc_to_h11 = [x for x in xfer if x.get("dst_well") == "H11" and "post_mix_volume" in x]
+    assert inoc_to_h11 == []
 
 
 def test_transfer_array_blank_well_then_control_then_lhs() -> None:
@@ -128,9 +127,10 @@ def test_base_control_no_variable_stocks() -> None:
     mapping, xfer, _s = generate_reagent_lhs_bundle(seed=6)
     by_well = {d["well"]: d["params"] for d in mapping["designs"]}
     xfer_h12 = [x for x in xfer if x.get("dst_well") == "H12"]
+    # Only the base medium well and the inoculum well should appear as sources for H12.
+    allowed_src_wells = {stocks.well_base, stocks.cell_stock_well}
     for step in xfer_h12:
-        if step.get("src_plate") == "reagent":
-            assert step["src_well"] == stocks.well_base
+        assert step["src_well"] in allowed_src_wells
     assert by_well["H12"]["design_type"] == DESIGN_TYPE_BASE_CONTROL
 
 
@@ -209,58 +209,61 @@ def test_validate_transfer_array_written_json_round_trip(tmp_path: Path) -> None
     assert len(rows) > 0
 
 
-def test_validate_transfer_array_rejects_volume_below_min() -> None:
-    row = {
-        "src_plate": "reagent",
-        "src_well": "A1",
+def _base_row(src_well: str = "A6", dst_well: str = "A1", volume: float = 50.0) -> dict:
+    return {
+        "src_plate": SOURCE_PLATE_ID,
+        "src_well": src_well,
         "dst_plate": "experiment",
-        "dst_well": "A1",
-        "volume": 9.99,
+        "dst_well": dst_well,
+        "volume": volume,
         "new_tip": "once",
         "blow_out": True,
     }
+
+
+def test_validate_transfer_array_rejects_volume_below_min() -> None:
+    row = _base_row(volume=9.99)
     with pytest.raises(ValueError, match="below minimum"):
         validate_transfer_array([row])
 
 
 def test_validate_transfer_array_rejects_per_well_over_cap() -> None:
-    rows = [
-        {
-            "src_plate": "reagent",
-            "src_well": "A6",
-            "dst_plate": "experiment",
-            "dst_well": "A1",
-            "volume": 150.0,
-            "new_tip": "once",
-            "blow_out": True,
-        },
-        {
-            "src_plate": "reagent",
-            "src_well": "A6",
-            "dst_plate": "experiment",
-            "dst_well": "A1",
-            "volume": 51.0,
-            "new_tip": "once",
-            "blow_out": True,
-        },
-    ]
+    rows = [_base_row(volume=150.0), _base_row(volume=51.0)]
     with pytest.raises(ValueError, match="above cap"):
         validate_transfer_array(rows)
 
 
 def test_validate_transfer_array_rejects_extra_keys() -> None:
-    row = {
-        "src_plate": "reagent",
-        "src_well": "A1",
-        "dst_plate": "experiment",
-        "dst_well": "A1",
-        "volume": 50.0,
-        "new_tip": "once",
-        "blow_out": True,
-        "unexpected": 1,
-    }
+    row = {**_base_row(), "unexpected": 1}
     with pytest.raises(ValidationError):
         validate_transfer_array([row])
+
+
+def test_validate_transfer_array_seed42_passes_source_cap() -> None:
+    """Default seed must produce a bundle within the 8.5 mL source well cap."""
+    _mapping, xfer, _summary = generate_reagent_lhs_bundle(seed=42)
+    rows = validate_transfer_array(xfer)
+    per_src: dict[str, float] = {}
+    for r in rows:
+        per_src[r.src_well] = per_src.get(r.src_well, 0.0) + r.volume
+    for well, total in per_src.items():
+        assert total <= MAX_SOURCE_WELL_VOLUME_UL + 1e-9, (
+            f"Source well {well} total {total:.0f} µL exceeds "
+            f"{MAX_SOURCE_WELL_VOLUME_UL:.0f} µL cap"
+        )
+
+
+def test_validate_transfer_array_rejects_source_well_over_cap() -> None:
+    """Rows that exceed the source well cap must be rejected.
+
+    Use 200 uL per destination well across 50 destination wells so the destination
+    cap (200 uL per well) is never breached, but the single source well accumulates
+    50 x 200 = 10 000 uL, which is above the 8 500 uL source cap.
+    """
+    all_dst_wells = [f"{r}{c}" for r in "ABCDEFGH" for c in range(1, 13)]
+    rows = [_base_row(src_well="A6", dst_well=w, volume=200.0) for w in all_dst_wells[:50]]
+    with pytest.raises(ValueError, match="24-well source cap"):
+        validate_transfer_array(rows)
 
 
 def test_transfer_array_keys_match_monomer_shape() -> None:
@@ -293,6 +296,23 @@ def test_design_summary_heading_matches_iteration_folder(tmp_path: Path) -> None
     write_reagent_design_outputs(iteration_dir, seed=1)
     text = (iteration_dir / "input" / "iter_042_design_summary.md").read_text()
     assert text.startswith("# iter_042 design summary\n")
+
+
+def test_design_summary_contains_workcell_setup_section() -> None:
+    _mapping, _xfer, summary = generate_reagent_lhs_bundle(seed=42)
+    assert "## Workcell setup" in summary
+    assert SOURCE_PLATE_ID in summary
+    assert "source_24w" in summary
+    assert "8.5 mL" in summary
+    assert "B1" in summary  # inoculum well
+    assert "### Experiment plate (96-well, starts empty)" in summary
+
+
+def test_design_summary_aspirated_totals_are_populated() -> None:
+    _mapping, _xfer, summary = generate_reagent_lhs_bundle(seed=42)
+    # Every source well row in the table should have a non-zero volume entry.
+    assert "µL" in summary
+    assert "mL" in summary
 
 
 def test_write_iter_001_outputs_alias_writes_files(tmp_path: Path) -> None:
