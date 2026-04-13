@@ -23,7 +23,7 @@ from src.design.transfer_validation import (
     MonomerReagentTransferRow,
     MonomerTransferRow,
     validate_transfer_array,
-)
+)  # MonomerReagentTransferRow / MonomerCellCultureTransferRow are aliases for MonomerTransferRow
 
 __all__ = [
     "MAX_SOURCE_WELL_VOLUME_UL",
