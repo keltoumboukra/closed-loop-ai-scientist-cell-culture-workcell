@@ -1,4 +1,4 @@
-![Loopy collaboration](https://raw.githubusercontent.com/keltoumboukra/closed-loop-ai-scientist-cell-culture-workcell/main/.github/assets/loopy-pr-collaborative.png)
+<p align="center"><img src="https://raw.githubusercontent.com/keltoumboukra/closed-loop-ai-scientist-cell-culture-workcell/main/.github/assets/loopy-pr-collaborative.png" width="200"/></p>
 
 ## Summary
 
