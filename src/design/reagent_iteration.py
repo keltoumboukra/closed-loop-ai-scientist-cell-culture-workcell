@@ -22,7 +22,7 @@ from typing import Any
 import numpy as np
 from scipy.stats import qmc
 
-from src.design.constants import MAX_WELL_VOLUME_UL, MIN_TRANSFER_VOLUME_UL
+from src.design.constants import MAX_WELL_VOLUME_UL, MIN_TRANSFER_VOLUME_UL, SOURCE_PLATE_ID
 from src.design.transfer_validation import validate_transfer_array
 
 # Literature bounds: src/literature/vnatriegens_parameter_research.md
@@ -133,8 +133,8 @@ class StockConfig:
     well_mgso4: str = "A4"
     well_casamino: str = "A5"
     well_base: str = "A6"
-    # Cell culture source
-    cell_stock_well: str = "A1"
+    # Cell culture source — B1 so it does not collide with NaCl (A1) on one 24-well plate
+    cell_stock_well: str = "B1"
     # Stock concentrations (match literature prep hints; tune for real stocks)
     nacl_stock_g_per_l: float = 150.0
     mops_stock_mm: float = 1000.0
@@ -349,7 +349,7 @@ def build_transfer_array(
                 continue
             transfers.append(
                 {
-                    "src_plate": "reagent",
+                    "src_plate": SOURCE_PLATE_ID,
                     "src_well": well_to_stock_well[key],
                     "dst_plate": "experiment",
                     "dst_well": dst_well,
@@ -362,7 +362,7 @@ def build_transfer_array(
         if base_r > 0:
             transfers.append(
                 {
-                    "src_plate": "reagent",
+                    "src_plate": SOURCE_PLATE_ID,
                     "src_well": stocks.well_base,
                     "dst_plate": "experiment",
                     "dst_well": dst_well,
@@ -375,7 +375,7 @@ def build_transfer_array(
         if inoc_r > 0:
             transfers.append(
                 {
-                    "src_plate": "cell_culture_stock",
+                    "src_plate": SOURCE_PLATE_ID,
                     "src_well": stocks.cell_stock_well,
                     "dst_plate": "experiment",
                     "dst_well": dst_well,

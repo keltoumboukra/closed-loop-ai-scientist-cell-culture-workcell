@@ -8,6 +8,7 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
+from src.design.constants import SOURCE_PLATE_ID
 from src.design.lhs_plots import lhs_sample_matrix_from_mapping, write_lhs_visualization_files
 from src.design.reagent_iteration import (
     BOUNDS,
@@ -273,9 +274,11 @@ def test_transfer_array_keys_match_monomer_shape() -> None:
         assert "volume" in step
         assert "new_tip" in step
         assert "blow_out" in step
-    cell_steps = [x for x in xfer if x["src_plate"] == "cell_culture_stock"]
+    # All source steps now use the single 24-well source plate id.
+    assert all(step["src_plate"] == SOURCE_PLATE_ID for step in xfer)
+    # Inoculum rows are identified by the presence of post-mix fields.
+    cell_steps = [x for x in xfer if "post_mix_volume" in x]
     assert cell_steps
-    assert "post_mix_volume" in cell_steps[0]
     assert "post_mix_reps" in cell_steps[0]
 
 
