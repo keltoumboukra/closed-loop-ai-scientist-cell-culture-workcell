@@ -22,7 +22,12 @@ from typing import Any
 import numpy as np
 from scipy.stats import qmc
 
-from src.design.constants import MAX_WELL_VOLUME_UL, MIN_TRANSFER_VOLUME_UL
+from src.design.constants import (
+    MAX_SOURCE_WELL_VOLUME_UL,
+    MAX_WELL_VOLUME_UL,
+    MIN_TRANSFER_VOLUME_UL,
+    SOURCE_PLATE_ID,
+)
 from src.design.transfer_validation import validate_transfer_array
 
 # Literature bounds: src/literature/vnatriegens_parameter_research.md
@@ -133,8 +138,8 @@ class StockConfig:
     well_mgso4: str = "A4"
     well_casamino: str = "A5"
     well_base: str = "A6"
-    # Cell culture source
-    cell_stock_well: str = "A1"
+    # Cell culture source — B1 so it does not collide with NaCl (A1) on one 24-well plate
+    cell_stock_well: str = "B1"
     # Stock concentrations (match literature prep hints; tune for real stocks)
     nacl_stock_g_per_l: float = 150.0
     mops_stock_mm: float = 1000.0
@@ -349,7 +354,7 @@ def build_transfer_array(
                 continue
             transfers.append(
                 {
-                    "src_plate": "reagent",
+                    "src_plate": SOURCE_PLATE_ID,
                     "src_well": well_to_stock_well[key],
                     "dst_plate": "experiment",
                     "dst_well": dst_well,
@@ -362,7 +367,7 @@ def build_transfer_array(
         if base_r > 0:
             transfers.append(
                 {
-                    "src_plate": "reagent",
+                    "src_plate": SOURCE_PLATE_ID,
                     "src_well": stocks.well_base,
                     "dst_plate": "experiment",
                     "dst_well": dst_well,
@@ -375,7 +380,7 @@ def build_transfer_array(
         if inoc_r > 0:
             transfers.append(
                 {
-                    "src_plate": "cell_culture_stock",
+                    "src_plate": SOURCE_PLATE_ID,
                     "src_well": stocks.cell_stock_well,
                     "dst_plate": "experiment",
                     "dst_well": dst_well,
@@ -394,15 +399,38 @@ def _well_sort_key(w: str) -> tuple[int, str]:
     return (int(w[1:]), w[0])
 
 
+def _source_well_totals(transfers: list[dict[str, Any]]) -> dict[str, float]:
+    """Sum aspirated µL per source well across the full transfer list."""
+    totals: dict[str, float] = {}
+    for row in transfers:
+        well = str(row["src_well"])
+        totals[well] = totals.get(well, 0.0) + float(row["volume"])
+    return totals
+
+
 def render_summary_markdown(
     well_params: dict[str, dict[str, float]],
     stocks: StockConfig,
+    transfers: list[dict[str, Any]],
     *,
     iteration_id: str,
     reserved_media_blank: str,
     reserved_base_control: str,
     seed: int,
 ) -> str:
+    src_totals = _source_well_totals(transfers)
+
+    # Well metadata for the source plate table
+    source_wells = [
+        (stocks.well_nacl, "NaCl stock", f"{stocks.nacl_stock_g_per_l} g/L"),
+        (stocks.well_mops, "MOPS pH 8 stock", f"{stocks.mops_stock_mm} mM"),
+        (stocks.well_glucose, "Glucose stock", f"{stocks.glucose_stock_g_per_l} g/L"),
+        (stocks.well_mgso4, "MgSO4 stock", f"{stocks.mgso4_stock_mm} mM"),
+        (stocks.well_casamino, "Casamino acids stock", f"{stocks.casamino_stock_g_per_l} g/L"),
+        (stocks.well_base, "Base medium (diluent / salts / trace)", "n/a"),
+        (stocks.cell_stock_well, "Bacterial inoculum (preculture)", "n/a"),
+    ]
+
     lines = [
         f"# {iteration_id} design summary",
         "",
@@ -438,6 +466,7 @@ def render_summary_markdown(
         lo, hi = BOUNDS[k]
         unit = "g/L" if "g_per_L" in k else "mM"
         lines.append(f"| `{k}` | {lo} | {hi} | {unit} |")
+
     lines.extend(
         [
             "",
@@ -453,27 +482,47 @@ def render_summary_markdown(
                 "stock wells; base + inoculum only."
             ),
             "",
-            "## Reagent stock plate (logical `reagent`)",
+            "## Workcell setup",
             "",
-            "| Well | Contents | Concentration (for volume math) |",
-            "| --- | --- | --- |",
-            f"| {stocks.well_nacl} | NaCl stock | {stocks.nacl_stock_g_per_l} g/L |",
-            f"| {stocks.well_mops} | MOPS (pH 8) stock | {stocks.mops_stock_mm} mM |",
-            f"| {stocks.well_glucose} | Glucose stock | {stocks.glucose_stock_g_per_l} g/L |",
-            f"| {stocks.well_mgso4} | MgSO₄ stock | {stocks.mgso4_stock_mm} mM |",
+            "### Source plate (24-well, one per run)",
+            "",
             (
-                f"| {stocks.well_casamino} | Casamino acids stock | "
-                f"{stocks.casamino_stock_g_per_l} g/L |"
+                f"Plate id in transfer array: `{SOURCE_PLATE_ID}`. "
+                f"Max fill per well: {MAX_SOURCE_WELL_VOLUME_UL / 1000:.1f} mL."
             ),
-            f"| {stocks.well_base} | Base medium (diluent / salts / trace as prepared) | n/a |",
             "",
-            "## Cell culture stock plate (logical `cell_culture_stock`)",
+            "Prepare the 24-well plate with the following wells before starting the run. "
+            "Volumes below are the total the robot will aspirate; prepare at least this much "
+            "plus dead volume for your labware (typically 0.5-1 mL extra per well).",
             "",
-            f"- Source well for inoculum: **`{stocks.cell_stock_well}`** (preculture per lab SOP).",
+            "| Well | Contents | Stock conc. | Total aspirated |",
+            "| --- | --- | --- | --- |",
+        ]
+    )
+
+    for well, label, conc in source_wells:
+        total_ul = src_totals.get(well, 0.0)
+        total_ml = total_ul / 1000
+        lines.append(f"| {well} | {label} | {conc} | {total_ul:.0f} µL ({total_ml:.2f} mL) |")
+
+    lines.extend(
+        [
             "",
-            "## Experiment plate",
+            "**Bacterial inoculum prep (well "
+            f"`{stocks.cell_stock_well}`):** grow an exponential-phase preculture "
+            "(OD600 ~1.5) in BHI+v2 or LBv2 at 37 C / 350 rpm for 3-4 h. "
+            "Place in the 24-well source plate immediately before starting the run. "
+            "See `src/literature/vnatriegens_operational_parameters.md` for detail.",
             "",
-            "- **Starts empty**; all liquid arrives via `transfer_array`.",
+            "**Seed feasibility note:** not every `--seed` value produces a transfer "
+            f"array that fits within the {MAX_SOURCE_WELL_VOLUME_UL / 1000:.1f} mL "
+            "source well cap. If generation fails with a volume cap error, "
+            "rerun `scripts/generate_reagent_design.py` with a different `--seed` "
+            "or increase stock concentrations in `StockConfig`.",
+            "",
+            "### Experiment plate (96-well, starts empty)",
+            "",
+            "- **Starts empty**; all liquid arrives via `transfer_array.json`.",
             (
                 f"- **Max total volume per well:** {MAX_WELL_VOLUME_UL:.0f} µL. "
                 "Base top-up uses a floored remainder so rounded stock aliquots "
@@ -512,6 +561,7 @@ def generate_reagent_lhs_bundle(
     summary = render_summary_markdown(
         well_params,
         stocks,
+        xfer,
         iteration_id=iteration_id,
         reserved_media_blank=reserved_media_blank,
         reserved_base_control=reserved_base_control,

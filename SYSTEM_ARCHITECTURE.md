@@ -404,7 +404,9 @@ data/
             └── growth_metrics.json
 ```
 
-Reagent LHS designs (mapping + `transfer_array.json`) are produced by **`src/design`**; run **`scripts/generate_reagent_design.py`** from the repo root. Details: **`src/design/README.md`**.
+Reagent LHS designs (mapping + `transfer_array.json` + `*_design_summary.md`) are produced by **`src/design`**; run **`scripts/generate_reagent_design.py`** from the repo root. Details: **`src/design/README.md`**.
+
+**Plate layout for liquid handling:** a single **24-well source plate** (`source_24w`, max 8.5 mL per well) holds all six reagent stocks (`A1`-`A6`) and the bacterial inoculum (`B1`). All transfers land in a **96-well experiment plate** (`experiment`) that starts empty. The generated `*_design_summary.md` includes the full workcell setup table with aspirated volumes per source well.
 
 ---
 

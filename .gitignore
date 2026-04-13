@@ -222,7 +222,6 @@ settings.local.*
 *.csv
 *.xlsx
 *.xls
-data/
 datasets/
 
 # ===================
@@ -240,5 +239,5 @@ datasets/
 # ===================
 
 # Generated mock/experiment data (use scripts/generate_mock_data.py to recreate)
-data/iterations/
+# data/iterations/ is intentionally tracked so iter inputs are versioned with the code.
 autoresearch-results.tsv
